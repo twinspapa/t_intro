@@ -189,3 +189,13 @@ footer {
 #home.depth1 {
     margin-top: 0;
 }
+
+#home .mid_bar, #home #btn_search {
+    position: absolute;
+    top: -100vh;
+}
+
+#home #nav_depth_2 {
+    position: absolute;
+    left: calc(100vw + 16px);
+}
