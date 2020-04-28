@@ -69,7 +69,7 @@
         </a>
       </div>
     </header>
-    <div class="swiper-container">
+    <div class="cnt_slider swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div id="prev_page">
@@ -101,6 +101,28 @@
     <!-- <script src="./res/js/jquery-3.5.0.slim.min.js" charset="utf-8"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
+    <!-- Include plugin after Swiper -->
+    <script>
+      /* ========
+      Debugger plugin, simple demo plugin to console.log some of callbacks
+      ======== */
+      var page_slide = {
+        name: 'debugger',
+        params: {
+          debugger: false,
+        },
+        on: {
+          slideChangeTransitionEnd: function () {
+            if (!this.params.debugger) return;
+            mySwiper.appendSlide([
+              '<div class="swiper-slide">
+                 <div id="prev_page"></div>
+              </div>'
+            ]);
+          },
+        },
+      };
+    </script>
     <script>
       var page_id = $('body').attr('id');
 
@@ -126,6 +148,18 @@
         centeredSlides: false,
         initialSlide: 0,
         freeMode: true
+      });
+
+
+      // 컨텐츠 슬라이더
+      cnt_slider.use(page_slide);
+      var cnt_slider = new Swiper('.cnt_slider',{
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        initialSlide: 1,
+        autoHeight: true,
+        freeMode: false
       });
     </script>
   </body>
