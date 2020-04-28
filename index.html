@@ -103,13 +103,12 @@
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
       var page_id = $('body').attr('id');
-      // //<![CDATA[
-      //   $(function(){
-      //     $("#active_page").load("home.html", function() {
-      //       alert("성공");
-      //     });
-      //   });
-      // //]]>
+
+      $(function(){
+        $("#active_page").load("./cnt/home.html", function() {
+          alert("성공");
+        });
+      });
 
       // 메인메뉴 슬라이더
       var depth_1 = new Swiper('.depth_1',{
