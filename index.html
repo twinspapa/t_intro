@@ -17,22 +17,22 @@
     <header>
       <div id="nav_depth_1">
         <div id="btn_menu" class="backdrop_st01"></div>
-        <nav class="depth_1 swiper-container border_box_all backdrop_st01">
-          <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a href="#car" data-id="car">자동차</a></li>
-            <li class="swiper-slide"><a href="#shopping" data-id="shopping">쇼핑</a></li>
-            <li class="swiper-slide"><a href="#home" data-id="home">홈</a></li>
-            <li class="swiper-slide"><a href="#news" data-id="news">뉴스</a></li>
-            <li class="swiper-slide"><a href="#enter" data-id="enter">연예</a></li>
-            <li class="swiper-slide"><a href="#sports" data-id="sports">스포츠</a></li>
-          </ul>
-        </nav>
+        <div class="mid_bar border_box_all backdrop_st01">
+          <nav class="depth_1 swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide"><a href="#game" data-id="game">게임</a></li>
+              <li class="swiper-slide"><a href="#car" data-id="car">자동차</a></li>
+              <li class="swiper-slide"><a href="#shopping" data-id="shopping">쇼핑</a></li>
+              <li class="swiper-slide"><a href="#home" data-id="home">홈</a></li>
+              <li class="swiper-slide"><a href="#news" data-id="news">뉴스</a></li>
+              <li class="swiper-slide"><a href="#enter" data-id="enter">연예</a></li>
+              <li class="swiper-slide"><a href="#sports" data-id="sports">스포츠</a></li>
+            </ul>
+          </nav>
+        </div>
         <div id="btn_search" class="backdrop_st01"></div>
       </div>
       <div id="nav_depth_2" class="scroll_wrap">
-        <div class="grd_next"></div>
-        <div class="grd_prev"></div>
         <nav class="depth_2 swiper-container border-box-all">
           <ul class="swiper-wrapper">
             <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
@@ -66,25 +66,31 @@
       </div>
     </div>
     <footer>
-      <div class="ad_wrap">
+      <div class="ad_wrap margin">
         <div ad-style="" ad-data-id="footer" ad-data-cate="">
           <img src="./res/img/dummy_ad_bnr_16×9.png" alt="광고타이틀출력">
         </div>
       </div>
-      <div class="info">
+      <div class="info margin">
         <a href="">이용약관</a>
         <a href="">개인정보처리방침</a>
         <a href="">고객센터</a>
       </div>
-      <div class="copyright">ⓒ SK텔레콤 Crop.</div>
+      <div class="copyright margin">ⓒ SK텔레콤 Crop.</div>
     </footer>
     <script src="./res/js/jquery-3.5.0.slim.min.js" charset="utf-8"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
       var depth_1 = new Swiper('.depth_1',{
         slidesPerView: 'auto',
-        centeredSlides: true,
+        centeredSlides: false,
         initialSlide: 3,
+        freeMode: true
+      });
+      var depth_2 = new Swiper('.depth_2',{
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        initialSlide: 0,
         freeMode: true
       });
     </script>

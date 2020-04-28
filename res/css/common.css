@@ -5,7 +5,7 @@
 *:not(input){font-family:"Noto Sans KR";-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;}
 *:focus {outline: none;}
 a{text-decoration: none;color: inherit;}
-body{margin:0;font-size:1rem;font-weight: normal;line-height:1.5;color: #000;text-align: left;background-color: #fff;overflow-x: hidden;scroll-behavior: smooth;/* overflow: auto; *//* height: 100vh; *//* padding-bottom: 70px; */margin-top: 89.5px;}
+body{margin:0;font-size:1rem;font-weight: normal;line-height:1.5;color: #222;text-align: left;background-color: #fff;overflow-x: hidden;scroll-behavior: smooth;/* overflow: auto; *//* height: 100vh; *//* padding-bottom: 70px; *//* margin-top: 89.5px; */}
 body.type2{margin-top: 46.8px;/* background-color: #fff; */margin-bottom: 52px;}
 *::-webkit-scrollbar{display:none;width: 0;}
 
@@ -24,13 +24,13 @@ input[type="tel"]{caret-color: #ef0775;-webkit-user-select:auto;user-select:auto
 
 .border-box { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .border-box-all * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.backdrop_st01 {background: rgba(255,255,255,.78);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);border: 0.5px solid rgba(0,0,0,.05);box-shadow: 0px 3px 6px 0 rgba(0,0,0,0.16);}
+.backdrop_st01 {background: rgba(249,249,249,.78);backdrop-filter: blur(20px);-webkit-backdrop-filter: blur(20px);border: 0.5px solid rgba(0,0,0,.05);/* box-shadow: 0px 3px 6px 0 rgba(0,0,0,0.16); */}
 
 
 header {
   padding: 8px 16px;
 }
-.depth_1 {
+.mid_bar {
   margin: 0 60px !important;
   border-radius: 22px;
 }
@@ -47,7 +47,7 @@ header {
 }
 
 .depth_1 li.swiper-slide-active a {
-    color: #EA002C;
+    /* color: #EA002C; */
 }
 
 #btn_menu {
@@ -76,7 +76,7 @@ header {
 .depth_2 li {
     display: inline-block;
     width: auto;
-    margin: 8px;
+    margin: 8px 16px 8px 0;
 }
 
 .depth_2 li a {
@@ -89,4 +89,61 @@ header {
 
 .font_zero {
     font-size: 0;
+}
+
+.margin {
+    margin: 0 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+footer .info {
+    padding: 24px 0 10px;
+    text-align: center;
+    font-size: 0;
+}
+
+footer .info a {
+    padding: 10px 8px;
+    font-size: 0.875rem;
+}
+
+footer .copyright {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+footer {
+    padding-bottom: 64px;
+}
+
+#nav_depth_2 {
+    position: relative;
+}
+
+
+.border_box_all {
+    box-sizing: border-box;
+}
+
+.border_box_all * {
+    box-sizing: border-box;
+}
+
+.depth_1 {
+    margin: 0 8px !important;
+}
+.news_tag_plus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 46px;
+    height: 46px;
+    background: #fff;
+    z-index: 10;
 }
