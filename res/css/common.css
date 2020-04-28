@@ -157,3 +157,35 @@ footer {
 .flex {
     display: flex;
 }
+
+.hide_up {
+    transform: translateY(-100vh);
+}
+
+.transition {
+    transition: all .3s ease;
+}
+
+.hide_right {
+    transform: translateX(100vw);
+}
+
+.hide_left {
+    transform: translateX(-100vw);
+}
+
+.hide_down {
+    transform: translateY(100vh);
+}
+
+#home header {
+    position: fixed;
+}
+
+#home {
+    margin-top: 0;
+}
+
+#home.depth1 {
+    margin-top: 0;
+}

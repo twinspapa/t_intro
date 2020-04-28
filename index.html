@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="./res/css/common.css">
     <link rel="stylesheet" href="./res/css/swiper.min.css">
   </head>
-  <body>
+  <body id="home">
     <header>
       <div id="nav_depth_1">
-        <div id="btn_menu" class="flex backdrop_st01">
+        <div id="btn_menu" class="flex backdrop_st01 transition">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24">
             <defs>
               <style>.a {fill: #fff; opacity: 0;}.b {fill: #ea002c;}</style>
@@ -29,7 +29,7 @@
             </g>
           </svg>
         </div>
-        <div class="mid_bar border_box_all backdrop_st01">
+        <div class="mid_bar border_box_all backdrop_st01 transition">
           <nav class="depth_1 swiper-container">
             <ul class="swiper-wrapper">
               <li class="swiper-slide"><a href="#game" data-id="game">게임</a></li>
@@ -42,7 +42,7 @@
             </ul>
           </nav>
         </div>
-        <div id="btn_search" class="flex backdrop_st01">
+        <div id="btn_search" class="flex backdrop_st01 transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <defs>
               <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
@@ -52,7 +52,7 @@
           </svg>
         </div>
       </div>
-      <div id="nav_depth_2" class="scroll_wrap">
+      <div id="nav_depth_2" class="scroll_wrap hide_right transition">
         <nav class="depth_2 swiper-container border-box-all">
           <ul class="swiper-wrapper">
             <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
