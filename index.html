@@ -120,11 +120,15 @@
           naxt_hash = naxt_el.attr('href'),
           prev_hash = prev_el.attr('href');
 
+      function page_load() {
+        $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html");
+        $("#prev_page").load("./cnt/"+ prev_el.attr('data-id') + ".html");
+        $("#next_page").load("./cnt/"+ naxt_el.attr('data-id') + ".html");
+      }
+
       $(function(){
         this_el.addClass('on');
-        $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html", function() {
-          alert("성공");
-        });
+        page_load();
       });
 
       // 메인메뉴 슬라이더
