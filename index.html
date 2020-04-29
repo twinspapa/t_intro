@@ -111,16 +111,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
-      var url = location.href,
-          this_hash = location.hash,
-          page_id = $('body').attr('id'),
-          this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
-          naxt_el = this_el.closest('li').next().children(),
-          prev_el = this_el.closest('li').prev().children(),
-          naxt_hash = naxt_el.attr('href'),
-          prev_hash = prev_el.attr('href');
+      function page_check() {
+        var url = location.href,
+            this_hash = location.hash,
+            page_id = $('body').attr('id'),
+            this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
+            naxt_el = this_el.closest('li').next().children(),
+            prev_el = this_el.closest('li').prev().children(),
+            naxt_hash = naxt_el.attr('href'),
+            prev_hash = prev_el.attr('href');
+      }
 
       $(function(){
+        page_check();
         $("#active_page").load("./cnt/home.html", function() {
           alert("성공");
         });
@@ -164,16 +167,8 @@
         freeMode: false,
         on: {
           slideChangeTransitionEnd: function () {
-            var url = location.href,
-                this_hash = location.hash,
-                page_id = $('body').attr('id'),
-                this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
-                naxt_el = this_el.closest('li').next().children(),
-                prev_el = this_el.closest('li').prev().children(),
-                naxt_hash = naxt_el.attr('href'),
-                prev_hash = prev_el.attr('href');
-
-                this_el.addClass('on');
+            page_check();
+            this_el.addClass('on');
           },
         }
       });
