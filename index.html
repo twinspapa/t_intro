@@ -111,7 +111,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
-      var page_id = $('body').attr('id');
+      var url = location.href,
+          hash = location.hash,
+          page_id = $('body').attr('id'),
+          this_el = $(".depth_1 ul li a[data-id='+'hash'+'").next()
+          naxt_el = this_el.next(),
+          prev_el = this_el.prev();
 
       $(function(){
         $("#active_page").load("./cnt/home.html", function() {
@@ -138,6 +143,10 @@
         spaceBetween: 16,
         centeredSlides: false,
         initialSlide: 0,
+        hashNavigation: {
+          watchState: true,
+          replaceState: true,
+        },
         freeMode: true
       });
 
