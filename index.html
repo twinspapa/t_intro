@@ -114,11 +114,11 @@
       var url = location.href,
           this_hash = location.hash,
           page_id = $('body').attr('id'),
-          this_el = $(".depth_1 ul li a[data-id='+ hash +']"),
-          naxt_el = this_el.next(),
-          prev_el = this_el.prev(),
-          naxt_hash = naxt_el.hash,
-          prev_hash = prev_el.hash;
+          this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
+          naxt_el = this_el.closest('li').next().children(),
+          prev_el = this_el.closest('li').prev().children(),
+          naxt_hash = naxt_el.attr('href'),
+          prev_hash = prev_el.attr('href');
 
       $(function(){
         $("#active_page").load("./cnt/home.html", function() {
@@ -164,7 +164,16 @@
         freeMode: false,
         on: {
           slideChangeTransitionEnd: function () {
-            console.log('완료');
+            var url = location.href,
+                this_hash = location.hash,
+                page_id = $('body').attr('id'),
+                this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
+                naxt_el = this_el.closest('li').next().children(),
+                prev_el = this_el.closest('li').prev().children(),
+                naxt_hash = naxt_el.attr('href'),
+                prev_hash = prev_el.attr('href');
+
+                this_el.addClass(on);
           },
         }
       });
