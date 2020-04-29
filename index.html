@@ -121,8 +121,8 @@
           prev_hash = prev_el.attr('href');
 
       $(function(){
-        page_check();
-        $("#active_page").load("./cnt/home.html", function() {
+        this_el.addClass('on');
+        $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html", function() {
           alert("성공");
         });
       });
@@ -165,8 +165,7 @@
         freeMode: false,
         on: {
           slideChangeTransitionEnd: function () {
-            page_check();
-            this_el.addClass('on');
+
           },
         }
       });
