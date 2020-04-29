@@ -199,3 +199,19 @@ footer {
     position: absolute;
     left: calc(100vw + 16px);
 }
+
+article{
+  height: 300px;
+}
+
+article.box1{
+  background: #333
+}
+
+article.box2{
+  background: #111
+}
+
+article.box3{
+  background: #dsdsds
+}

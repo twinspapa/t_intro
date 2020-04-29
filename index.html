@@ -73,14 +73,23 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div id="prev_page">
+            <article class="box1">
+
+            </article>
           </div>
         </div>
         <div class="swiper-slide">
           <div id="active_page">
+            <article class="box2">
+
+            </article>
           </div>
         </div>
         <div class="swiper-slide">
           <div id="next_page">
+            <article class="box3">
+
+            </article>
           </div>
         </div>
       </div>
@@ -101,28 +110,6 @@
     <!-- <script src="./res/js/jquery-3.5.0.slim.min.js" charset="utf-8"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
-    <!-- Include plugin after Swiper -->
-    <script>
-      /* ========
-      Debugger plugin, simple demo plugin to console.log some of callbacks
-      ======== */
-      var page_slide = {
-        name: 'debugger',
-        params: {
-          debugger: false,
-        },
-        on: {
-          slideChangeTransitionEnd: function () {
-            if (!this.params.debugger) return;
-            mySwiper.appendSlide([
-              '<div class="swiper-slide">
-                 <div id="prev_page"></div>
-              </div>'
-            ]);
-          },
-        },
-      };
-    </script>
     <script>
       var page_id = $('body').attr('id');
 
@@ -138,6 +125,10 @@
         spaceBetween: 0,
         centeredSlides: false,
         initialSlide: 3,
+        hashNavigation: {
+          watchState: true,
+          replaceState: true,
+        },
         freeMode: true
       });
 
@@ -152,15 +143,23 @@
 
 
       // 컨텐츠 슬라이더
-      cnt_slider.use(page_slide);
+
       var cnt_slider = new Swiper('.cnt_slider',{
         slidesPerView: 1,
         spaceBetween: 0,
         centeredSlides: true,
         initialSlide: 1,
         autoHeight: true,
-        freeMode: false
+        freeMode: false,
+        on: {
+          slideChangeTransitionEnd: function () {
+            if (!this.params.debugger) return;
+            console.log('완료');
+          },
+        }
       });
+
+
     </script>
   </body>
 </html>
