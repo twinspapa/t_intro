@@ -32,13 +32,6 @@
         <div class="mid_bar border_box_all backdrop_st01">
           <nav class="depth_1 swiper-container">
             <ul class="swiper-wrapper">
-              <li class="swiper-slide"><a href="#game" data-id="game">게임</a></li>
-              <li class="swiper-slide"><a href="#car" data-id="car">자동차</a></li>
-              <li class="swiper-slide"><a href="#shopping" data-id="shopping">쇼핑</a></li>
-              <li class="swiper-slide"><a href="#home" data-id="home">홈</a></li>
-              <li class="swiper-slide"><a href="#news" data-id="news">뉴스</a></li>
-              <li class="swiper-slide"><a href="#enter" data-id="enter">연예</a></li>
-              <li class="swiper-slide"><a href="#sports" data-id="sports">스포츠</a></li>
             </ul>
           </nav>
         </div>
@@ -111,19 +104,62 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
-      var url = location.href,
-          this_hash = location.hash,
-          page_id = $('body').attr('id'),
-          this_el = $(".depth_1 ul li a[href='"+ this_hash +"']"),
-          naxt_el = this_el.closest('li').next().children(),
-          prev_el = this_el.closest('li').prev().children(),
-          naxt_hash = naxt_el.attr('href'),
-          prev_hash = prev_el.attr('href');
+    // depth_1 load
+    var user_cate = {game:"게임", car:"자동차", shopping:"쇼핑", home:"홈", news:"뉴스", enter:"연예", sports:"스포츠"},
+        cate_length = Object.keys(user_cate).length,
+        $depth_1 = $('.depth_1 ul');
+
+    function cate_load() {
+      for (var i = 0; i < cate_length; i++) {
+        var data = Object.keys(user_cate)[i],
+            data_name = user_cate[Object.keys(user_cate)[i]];
+
+        $depth_1.append("<li class='swiper-slide n"+ i +"'><a href='#" + data + "'>" + data_name + "</a></li>");
+      }
+      depth_1.update();
+    }
+
+    var depth_1 = new Swiper('.depth_1',{
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      centeredSlides: false,
+      initialSlide: 3,
+      hashNavigation: {
+        watchState: true,
+        replaceState: true,
+      },
+      freeMode: true
+    });
+
+    (function() {
+        cate_load();
+    }());
+    // depth_1 end
+
+
+    // page check
+    var page_url = location.href,
+        page_hash = location.hash,
+        page_id = page_hash.replace("#","");
+
+    (function() {
+        document.body.setAttribute('id',page_id);
+    }());
+    // page check end
+
+
+    // cnt slide
+    var this_el = $(''),
+        next_el = this_el.closest("li").next().children(),
+        prev_el = this_el.closest("li").prev().children(),
+        naxt_hash = next_el.attr("href"),
+        prev_hash = prev_el.attr("href");
+
 
       function page_load() {
         $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html");
         $("#prev_page").load("./cnt/"+ prev_el.attr('data-id') + ".html");
-        $("#next_page").load("./cnt/"+ naxt_el.attr('data-id') + ".html");
+        $("#next_page").load("./cnt/"+ next_el.attr('data-id') + ".html");
       }
 
       $(function(){
@@ -131,18 +167,7 @@
         page_load();
       });
 
-      // 메인메뉴 슬라이더
-      var depth_1 = new Swiper('.depth_1',{
-        slidesPerView: 'auto',
-        spaceBetween: 0,
-        centeredSlides: false,
-        initialSlide: 3,
-        hashNavigation: {
-          watchState: true,
-          replaceState: true,
-        },
-        freeMode: true
-      });
+
 
       // 서브메뉴 슬라이더
       var depth_2 = new Swiper('.depth_2',{
@@ -173,7 +198,6 @@
           },
         }
       });
-
 
     </script>
   </body>
