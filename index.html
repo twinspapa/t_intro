@@ -166,24 +166,24 @@
     // page check end
 
 
-    // cnt slide
-    var this_el = $(''),
-        next_el = this_el.closest("li").next().children(),
-        prev_el = this_el.closest("li").prev().children(),
-        naxt_hash = next_el.attr("href"),
-        prev_hash = prev_el.attr("href");
-
-
-      function page_load() {
-        $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html");
-        $("#prev_page").load("./cnt/"+ prev_el.attr('data-id') + ".html");
-        $("#next_page").load("./cnt/"+ next_el.attr('data-id') + ".html");
-      }
-
-      $(function(){
-        this_el.addClass('on');
-        page_load();
-      });
+    // // cnt slide
+    // var this_el = $(''),
+    //     next_el = this_el.closest("li").next().children(),
+    //     prev_el = this_el.closest("li").prev().children(),
+    //     naxt_hash = next_el.attr("href"),
+    //     prev_hash = prev_el.attr("href");
+    //
+    //
+    //   function page_load() {
+    //     $("#active_page").load("./cnt/"+ this_el.attr('data-id') + ".html");
+    //     $("#prev_page").load("./cnt/"+ prev_el.attr('data-id') + ".html");
+    //     $("#next_page").load("./cnt/"+ next_el.attr('data-id') + ".html");
+    //   }
+    //
+    //   $(function(){
+    //     this_el.addClass('on');
+    //     page_load();
+    //   });
 
 
 
@@ -210,10 +210,10 @@
         initialSlide: 1,
         autoHeight: true,
         freeMode: false,
-        on: {
-          slideChangeTransitionEnd: function () {
-            page_load();
-          },
+        // on: {
+        //   slideChangeTransitionEnd: function () {
+        //     page_load();
+        //   },
         }
       });
 
