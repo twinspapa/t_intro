@@ -1,143 +1,171 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" name="viewport">
-    <meta property="og:title" content="Tintro">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="./res/img/tintro_share.png">
-    <meta property="og:description" content="화제의 모바일 콘텐츠를 한 곳에서!">
-    <meta name="description" content="화제의 모바일 콘텐츠를 한 곳에서!">
-    <meta name="keywords" content="SKT,SK텔레콤,T인트로,Tintro" />
-    <title>T인트로</title>
-    <link rel="stylesheet" href="./res/css/common.css">
-    <link rel="stylesheet" href="./res/css/swiper.min.css">
-  </head>
-  <body id="">
-    <header class="border_box">
-      <div id="nav_depth_1">
-        <div id="btn_menu" class="backdrop_st01">
-          <div class="a_close box44 flex">
-            <div class="icon_menu">
-              <div class="icon_menu_inner"></div>
-            </div>
-          </div>
-          <div class="login"></div>
-          <div class="logout"></div>
-        </div>
-        <div class="mid_bar border_box_all backdrop_st01">
-          <nav class="depth_1 swiper-container">
-            <ul class="swiper-wrapper">
-            </ul>
-          </nav>
-        </div>
-        <div id="search_wrap" class="backdrop_st01">
-          <div id="btn_search" class="flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <defs>
-                <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
-              </defs>
-              <rect class="a" width="24" height="24"/>
-              <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z" transform="translate(-6 -5.987)"/>
-            </svg>
-          </div>
-          <form name="search" role="search" action="">
-            <input type="search" name="" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요." class="" autocomplete="off" maxlength="255" autocorrent="off" autocapitalize="off" >
-            <button class="clear" type="button" name="input_clear">입력된 검색어 삭제</button>
-            <button class="searh" type="button" name="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <defs>
-                  <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
-                </defs>
-                <rect class="a" width="24" height="24"/>
-                <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z" transform="translate(-6 -5.987)"/>
-              </svg>
-            </button>
-          </form>
-          <div class="close"></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <meta property="og:title" content="Tintro">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./res/img/tintro_share.png">
+  <meta property="og:description" content="화제의 모바일 콘텐츠를 한 곳에서!">
+  <meta name="description" content="화제의 모바일 콘텐츠를 한 곳에서!">
+  <meta name="keywords" content="SKT,SK텔레콤,T인트로,Tintro" />
+  <title>T인트로</title>
+  <link rel="stylesheet" href="./res/css/common.css">
+  <link rel="stylesheet" href="./res/css/swiper.min.css">
+</head>
+
+<body id="">
+  <header>
+    <div id="btn_menu" class="box44 flex">
+      <div class="icon_menu">
+        <div class="icon_menu_inner"></div>
+      </div>
+    </div>
+    <div id="mypage" class="backdrop_st01">
+      <div class="login"></div>
+      <div class="logout"></div>
+    </div>
+    <div id="nav_1" class="mid_bar border_box_all backdrop_st01">
+      <nav class="depth_1 swiper-container">
+        <ul class="swiper-wrapper"></ul>
+      </nav>
+    </div>
+    <div id="search_wrap" class="backdrop_st01">
+      <div id="btn_search" class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <defs>
+            <style>
+              .a {
+                fill: #fff;
+                opacity: 0;
+              }
+
+              .b {
+                fill: #db0017;
+              }
+            </style>
+          </defs>
+          <rect class="a" width="24" height="24" />
+          <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z"
+            transform="translate(-6 -5.987)" />
+        </svg>
+      </div>
+      <form name="search" role="search" action="">
+        <input type="search" name="" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요." class="" autocomplete="off" maxlength="255" autocorrent="off" autocapitalize="off">
+        <button class="clear" type="button" name="input_clear">입력된 검색어 삭제</button>
+        <button class="searh" type="button" name="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <defs>
+              <style>
+                .a {
+                  fill: #fff;
+                  opacity: 0;
+                }
+
+                .b {
+                  fill: #db0017;
+                }
+              </style>
+            </defs>
+            <rect class="a" width="24" height="24" />
+            <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z"
+              transform="translate(-6 -5.987)" />
+          </svg>
+        </button>
+      </form>
+      <div class="close"></div>
+    </div>
+    <div id="nav_2">
+      <nav class="depth_2 swiper-container border-box-all">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+          <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
+        </ul>
+      </nav>
+      <a href="" class="news_tag_plus">
+        <span class="font_zero">관심 태그 추가하기</span>
+      </a>
+    </div>
+  </header>
+  <div class="cnt_slider swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div id="prev_page">
+          <article class="box1">
+
+          </article>
         </div>
       </div>
-      <div id="nav_depth_2">
-        <nav class="depth_2 swiper-container border-box-all">
-          <ul class="swiper-wrapper">
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-            <li class="swiper-slide"><a class="backdrop_st01" href="#game" data-id="game">게임</a></li>
-          </ul>
-        </nav>
-        <a href="" class="news_tag_plus">
-          <span class="font_zero">관심 태그 추가하기</span>
-        </a>
+      <div class="swiper-slide">
+        <div id="active_page">
+          <article class="box2">
+
+          </article>
+        </div>
       </div>
-    </header>
-    <div class="cnt_slider swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div id="prev_page">
-            <article class="box1">
+      <div class="swiper-slide">
+        <div id="next_page">
+          <article class="box3">
 
-            </article>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div id="active_page">
-            <article class="box2">
-
-            </article>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div id="next_page">
-            <article class="box3">
-
-            </article>
-          </div>
+          </article>
         </div>
       </div>
     </div>
-    <footer>
-      <div class="ad_wrap margin">
-        <div ad-style="" ad-data-id="footer" ad-data-cate="">
-          <img src="./res/img/dummy_ad_bnr_16×9.png" alt="광고타이틀출력">
-        </div>
+  </div>
+  <footer>
+    <div class="ad_wrap margin">
+      <div ad-style="" ad-data-id="footer" ad-data-cate="">
+        <img src="./res/img/dummy_ad_bnr_16×9.png" alt="광고타이틀출력">
       </div>
-      <div class="info margin">
-        <a href="">이용약관</a>
-        <a href="">개인정보처리방침</a>
-        <a href="">고객센터</a>
-      </div>
-      <div class="copyright margin">ⓒ SK텔레콤 Crop.</div>
-    </footer>
-    <!-- <script src="./res/js/jquery-3.5.0.slim.min.js" charset="utf-8"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./res/js/swiper.min.js" charset="utf-8"></script>
-    <script>
+    </div>
+    <div class="info margin">
+      <a href="">이용약관</a>
+      <a href="">개인정보처리방침</a>
+      <a href="">고객센터</a>
+    </div>
+    <div class="copyright margin">ⓒ SK텔레콤 Crop.</div>
+  </footer>
+  <!-- <script src="./res/js/jquery-3.5.0.slim.min.js" charset="utf-8"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./res/js/swiper.min.js" charset="utf-8"></script>
+  <script>
     $(function() {
-      $("#btn_menu .a_close").click(function(){
-        $("#btn_menu").toggleClass('on');
+      $("#btn_menu").click(function() {
+        $(this).toggleClass('on');
+        $("#mypage").toggleClass('on');
       });
     });
 
     // depth_1 load
-    var user_cate = {game:"게임", car:"자동차", shopping:"쇼핑", home:"홈", news:"뉴스", enter:"연예", sports:"스포츠"},
-        cate_length = Object.keys(user_cate).length,
-        $depth_1 = $('.depth_1 ul');
+    var user_cate = {
+        game: "게임",
+        car: "자동차",
+        shopping: "쇼핑",
+        home: "홈",
+        news: "뉴스",
+        enter: "연예",
+        sports: "스포츠"
+      },
+      cate_length = Object.keys(user_cate).length,
+      $depth_1 = $('.depth_1 ul');
 
     function cate_load() {
       for (var i = 0; i < cate_length; i++) {
         var data = Object.keys(user_cate)[i],
-            data_name = user_cate[Object.keys(user_cate)[i]];
+          data_name = user_cate[Object.keys(user_cate)[i]];
 
-        $depth_1.append("<li class='swiper-slide n"+ i +"'><a href='#" + data + "'>" + data_name + "</a></li>");
+        $depth_1.append("<li class='swiper-slide n" + i + "'><a href='#" + data + "'>" + data_name + "</a></li>");
       }
       depth_1.update();
     }
 
-    var depth_1 = new Swiper('.depth_1',{
+    var depth_1 = new Swiper('.depth_1', {
       slidesPerView: 'auto',
       spaceBetween: 0,
       centeredSlides: false,
@@ -150,18 +178,18 @@
     });
 
     (function() {
-        cate_load();
+      cate_load();
     }());
     // depth_1 end
 
 
     // page check
     var page_url = location.href,
-        page_hash = location.hash,
-        page_id = page_hash.replace("#","");
+      page_hash = location.hash,
+      page_id = page_hash.replace("#", "");
 
     (function() {
-        document.body.setAttribute('id',page_id);
+      document.body.setAttribute('id', page_id);
     }());
     // page check end
 
@@ -187,36 +215,36 @@
 
 
 
-      // 서브메뉴 슬라이더
-      var depth_2 = new Swiper('.depth_2',{
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        centeredSlides: false,
-        initialSlide: 0,
-        hashNavigation: {
-          watchState: true,
-          replaceState: true,
-        },
-        freeMode: true
-      });
+    // 서브메뉴 슬라이더
+    var depth_2 = new Swiper('.depth_2', {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: false,
+      initialSlide: 0,
+      hashNavigation: {
+        watchState: true,
+        replaceState: true,
+      },
+      freeMode: true
+    });
 
 
-      // 컨텐츠 슬라이더
+    // 컨텐츠 슬라이더
 
-      var cnt_slider = new Swiper('.cnt_slider',{
-        slidesPerView: 1,
-        spaceBetween: 0,
-        centeredSlides: true,
-        initialSlide: 1,
-        autoHeight: true,
-        freeMode: false,
-        // on: {
-        //   slideChangeTransitionEnd: function () {
-        //     page_load();
-        //   },
-        // }
-      });
+    var cnt_slider = new Swiper('.cnt_slider', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      centeredSlides: true,
+      initialSlide: 1,
+      autoHeight: true,
+      freeMode: false,
+      // on: {
+      //   slideChangeTransitionEnd: function () {
+      //     page_load();
+      //   },
+      // }
+    });
+  </script>
+</body>
 
-    </script>
-  </body>
 </html>
