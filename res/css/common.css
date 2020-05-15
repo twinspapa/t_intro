@@ -56,8 +56,8 @@ header {
     left: 16px;
     width: 44px;
     height: 44px;
-    border-radius: 100%;
-    transition: width 0.5s ease,height 0.5s ease, border-radius 0.5s 0.25s ease;
+    border-radius: 44px;
+    transition: width 0.3s ease,height 0.3s ease, border-radius 0.3s 0.1s ease;
     z-index: 10;
 }
 
@@ -217,7 +217,7 @@ article div{
     border-radius: 0;
     border-color: transparent;
     transform: translate(-16px, -16px);
-    transition: width 0.5s ease,height 0.5s ease;
+    transition: width 0.3s ease,height 0.3s ease;
     z-index: 10;
 }
 
