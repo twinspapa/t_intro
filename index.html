@@ -16,18 +16,14 @@
   <body id="">
     <header class="border_box">
       <div id="nav_depth_1">
-        <div id="btn_menu" class="flex backdrop_st01">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24">
-            <defs>
-              <style>.a {fill: #fff; opacity: 0;}.b {fill: #ea002c;}</style>
-            </defs>
-            <rect class="a" width="24" height="24"></rect>
-            <g transform="translate(2 6)">
-              <path class="b" d="M23.667,11.792H5.333a.836.836,0,0,1-.833-.833h0a.836.836,0,0,1,.833-.833H23.667a.836.836,0,0,1,.833.833h0A.836.836,0,0,1,23.667,11.792Z" transform="translate(-4.5 -10.125)"></path>
-              <path class="b" d="M23.667,18.542H5.333a.836.836,0,0,1-.833-.833h0a.836.836,0,0,1,.833-.833H23.667a.836.836,0,0,1,.833.833h0A.836.836,0,0,1,23.667,18.542Z" transform="translate(-4.5 -11.875)"></path>
-              <path class="b" d="M23.667,25.292H5.333a.836.836,0,0,1-.833-.833h0a.836.836,0,0,1,.833-.833H23.667a.836.836,0,0,1,.833.833h0A.836.836,0,0,1,23.667,25.292Z" transform="translate(-4.5 -13.625)"></path>
-            </g>
-          </svg>
+        <div id="btn_menu" class="backdrop_st01">
+          <div class="a_close box44 flex">
+            <div class="icon_menu">
+              <div class="icon_menu_inner"></div>
+            </div>
+          </div>
+          <div class="login"></div>
+          <div class="logout"></div>
         </div>
         <div class="mid_bar border_box_all backdrop_st01">
           <nav class="depth_1 swiper-container">
@@ -35,14 +31,30 @@
             </ul>
           </nav>
         </div>
-        <div id="btn_search" class="flex backdrop_st01">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <defs>
-              <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
-            </defs>
-            <rect class="a" width="24" height="24"/>
-            <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z" transform="translate(-6 -5.987)"/>
-          </svg>
+        <div id="search_wrap" class="backdrop_st01">
+          <div id="btn_search" class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <defs>
+                <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
+              </defs>
+              <rect class="a" width="24" height="24"/>
+              <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z" transform="translate(-6 -5.987)"/>
+            </svg>
+          </div>
+          <form name="search" role="search" action="">
+            <input type="search" name="" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요." class="" autocomplete="off" maxlength="255" autocorrent="off" autocapitalize="off" >
+            <button class="clear" type="button" name="input_clear">입력된 검색어 삭제</button>
+            <button class="searh" type="button" name="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <defs>
+                  <style>.a{fill:#fff;opacity:0;}.b{fill:#db0017;}</style>
+                </defs>
+                <rect class="a" width="24" height="24"/>
+                <path class="b" d="M27.765,26.54,22.2,20.927A7.927,7.927,0,1,0,21,22.145l5.526,5.577a.856.856,0,0,0,1.208.031A.861.861,0,0,0,27.765,26.54ZM15.974,22.213A6.259,6.259,0,1,1,20.4,20.38,6.222,6.222,0,0,1,15.974,22.213Z" transform="translate(-6 -5.987)"/>
+              </svg>
+            </button>
+          </form>
+          <div class="close"></div>
         </div>
       </div>
       <div id="nav_depth_2">
@@ -104,6 +116,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./res/js/swiper.min.js" charset="utf-8"></script>
     <script>
+    $(function() {
+      $("#btn_menu .a_close").click(function(){
+        $("#btn_menu").toggleClass('on');
+      });
+    });
+
     // depth_1 load
     var user_cate = {game:"게임", car:"자동차", shopping:"쇼핑", home:"홈", news:"뉴스", enter:"연예", sports:"스포츠"},
         cate_length = Object.keys(user_cate).length,
