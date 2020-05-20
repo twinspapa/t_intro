@@ -233,14 +233,14 @@
       freeMode: false,
       on: {
         slideNextTransitionEnd: function () {
-          cnt_slider.appendSlide('<div class="swiper-slide"><div id="next_page"></div></div>');
           cnt_slider.removeSlide(0);
+          cnt_slider.appendSlide('<div class="swiper-slide swiper-slide-next"><div id="next_page"></div></div>');
           $('.swiper-slide-active > div').attr('id','active_page');
           page_load();
         },
         slidePrevTransitionEnd: function () {
-          cnt_slider.prependSlide('<div class="swiper-slide"><div id="prev_page"></div></div>');
           cnt_slider.removeSlide(2);
+          cnt_slider.prependSlide('<div class="swiper-slide swiper-slide-prev"><div id="prev_page"></div></div>');
           $('.swiper-slide-active > div').attr('id','active_page');
           page_load();
         },
