@@ -245,9 +245,9 @@
       freeMode: false,
       on: {
         slideChangeTransitionEnd: function () {
+          $('.swiper-slide-active > div').attr('id','active_page');
           page_change();
           page_load();
-          $('.swiper-slide-active > div').attr('id','active_page');
         },
       }
     });
