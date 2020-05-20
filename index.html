@@ -224,18 +224,6 @@
 
 
     // 컨텐츠 슬라이더
-    var page_change = function() {
-      var cnt_el = $('.cnt_slider .cnt_el');
-
-      if ( cnt_el.eq(0).hasClass('swiper-slide-active')) {
-          cnt_slider.removeSlide(2);
-          cnt_slider.prependSlide('<div class="swiper-slide"><div id="next_page"></div></div>');
-      } else if(cnt_el.eq(2).hasClass('swiper-slide-active')) {
-          cnt_slider.removeSlide(0);
-          cnt_slider.appendSlide('<div class="swiper-slide"><div id="prev_page"></div></div>');
-      }
-    }
-
     var cnt_slider = new Swiper('.cnt_slider', {
       slidesPerView: 1,
       spaceBetween: 0,
@@ -246,7 +234,15 @@
       on: {
         slideChangeTransitionEnd: function () {
           $('.swiper-slide-active > div').attr('id','active_page');
-          page_change();
+          var cnt_el = $('.cnt_slider .cnt_el');
+
+          if ( cnt_el.eq(0).hasClass('swiper-slide-active')) {
+              cnt_slider.removeSlide(2);
+              cnt_slider.prependSlide('<div class="swiper-slide"><div id="next_page"></div></div>');
+          } else if(cnt_el.eq(2).hasClass('swiper-slide-active')) {
+              cnt_slider.removeSlide(0);
+              cnt_slider.appendSlide('<div class="swiper-slide"><div id="prev_page"></div></div>');
+          }
           page_load();
         },
       }
