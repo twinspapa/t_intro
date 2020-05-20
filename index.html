@@ -97,26 +97,14 @@
 
   <div class="cnt_slider swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div id="prev_page">
-          <article class="box1">
-
-          </article>
-        </div>
+      <div class="cnt_el swiper-slide">
+        <div id="prev_page"></div>
       </div>
-      <div class="swiper-slide">
-        <div id="active_page">
-          <article class="box2">
-
-          </article>
-        </div>
+      <div class="cnt_el swiper-slide">
+        <div id="active_page"></div>
       </div>
-      <div class="swiper-slide">
-        <div id="next_page">
-          <article class="box3">
-
-          </article>
-        </div>
+      <div class="cnt_el swiper-slide">
+        <div id="next_page"></div>
       </div>
     </div>
   </div>
@@ -208,7 +196,7 @@
         prev_el = this_el.closest("li").prev().children();
 
 
-    function page_load() {
+    var page_load = function () {
       $("#active_page").load("./cnt/"+ this_el.attr('class') + ".html");
       $("#prev_page").load("./cnt/"+ prev_el.attr('class') + ".html");
       $("#next_page").load("./cnt/"+ next_el.attr('class') + ".html");
@@ -236,6 +224,21 @@
 
 
     // 컨텐츠 슬라이더
+    var page_change = function() {
+      var cnt_el = $('.cnt_slider .cnt_el');
+
+      if ( cnt_el.eq(0).hasClass('swiper-slide-active')) {
+          cnt_slider.removeSlide(2);
+          cnt_slider.prependSlide('<div class="swiper-slide"><div id="next_page"></div></div>');
+          cnt_el.eq(1).children().first().attr('id','active_page');
+          cnt_el.eq(0).children().first().attr('id','prev_page');
+      } else if(cnt_el.eq(2).hasClass('swiper-slide-active')) {
+          cnt_slider.removeSlide(0);
+          cnt_slider.appendSlide('<div class="swiper-slide"><div id="prev_page"></div></div>');
+          cnt_el.eq(1).children().first().attr('id','active_page');
+          cnt_el.eq(2).children().first().attr('id','next_page');
+      }
+    }
 
     var cnt_slider = new Swiper('.cnt_slider', {
       slidesPerView: 1,
@@ -246,6 +249,7 @@
       freeMode: false,
       on: {
         slideChangeTransitionEnd: function () {
+          page_change();
           page_load();
         },
       }
