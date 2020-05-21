@@ -217,7 +217,7 @@
     } else {
       $el.load("./cnt/"+ active_id + ".html");
       $el.parent().attr('data-id',active_id);
-    } 
+    }
   }
 
   var nav_1_reset_on = function() {
@@ -265,10 +265,10 @@
         $prev_el = $cnt_el.eq(0);
 
     if($prev_el.hasClass('swiper-slide-active')) {
-      page_load(prev);
+      page_load('prev');
       $cnt_wrap.prepend($next_el);
     } else if ($next_el.hasClass('swiper-slide-active')) {
-      page_load(next);
+      page_load('next');
       $cnt_wrap.append($prev_el);
     }
 
