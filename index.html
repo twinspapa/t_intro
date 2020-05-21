@@ -95,7 +95,7 @@
     </div>
   </header>
 
-  <div class="cnt_slider swiper-container">
+  <div id="cnt" class="cnt_slider swiper-container">
     <div class="swiper-wrapper">
       <div class="cnt_el swiper-slide">
         <div id="prev_page"></div>
@@ -127,7 +127,7 @@
   <script>
 
 // Start [Global 변수 선언]
-  let user_cate = {
+  var user_cate = {
         game: "게임",
         car: "자동차",
         shopping: "쇼핑",
@@ -136,24 +136,26 @@
         enter: "연예",
         sports: "스포츠"
       },
-      page_id = location.hash.replace("#", "");
+      page_id = location.hash.replace("#", ""),
+      $cnt_wrap = $('#cnt').children().eq(0);
 // End [변수 선언]
 
 
 // Start [1depth 메뉴 로드 ->> cate_load()]
-  function cate_load() {
+  var cate_load = function() {
 
-    const $depth_1 = $('.depth_1 ul'),
-          cate_length = Object.keys(user_cate).length;
+    var $depth_1 = $('#nav_1 .swiper-wrapper'),
+        cate_length = Object.keys(user_cate).length;
 
-    for (let i = 0; i < cate_length; i++) {
-      let data = Object.keys(user_cate)[i],
+    for (var i = 0; i < cate_length; i++) {
+      var data = Object.keys(user_cate)[i],
           data_name = user_cate[Object.keys(user_cate)[i]];
 
       $depth_1.append("<li id="data" class='swiper-slide'><a href='#'>" + data_name + "</a></li>");
+
     }
 
-    let depth_1 = new Swiper('.depth_1', {
+    var depth_1 = new Swiper('.depth_1', {
       slidesPerView: 'auto',
       spaceBetween: 0,
       centeredSlides: false,
@@ -168,8 +170,8 @@
   }
 // << End "1depth 메뉴"
 
-  let this_el_catch = function (){
-      const page_hash = location.hash;
+  var this_el_catch = function (){
+      var page_hash = location.hash;
 
       if(page_hash == "") {
         $("#home");
@@ -178,49 +180,28 @@
       }
   }
 
-  let page_open_load = function () {
-    let this_el = this_el_catch(),
+  var page_open_load = function () {
+    var this_el = this_el_catch(),
         next_el = this_el.next(),
         prev_el = this_el.prev();
 
-    $("#active_page").load("./cnt/"+ this_el.attr('class') + ".html");
-    $("#prev_page").load("./cnt/"+ prev_el.attr('class') + ".html");
-    $("#next_page").load("./cnt/"+ next_el.attr('class') + ".html");
-    this_el.closest('li').addClass('on');
+    $("#active_page").load("./cnt/"+ this_el.attr('id') + ".html");
+    $("#prev_page").load("./cnt/"+ prev_el.attr('id') + ".html");
+    $("#next_page").load("./cnt/"+ next_el.attr('id') + ".html");
+    this_el.addClass('on');
   }
 
 
-    $(function() {
-      $("#btn_menu").click(function() {
-        $(this).toggleClass('on');
-        $("#mypage").toggleClass('on');
-      });
-
-      cate_load();
-      $('body').attr('id', 'pid_'+page_id);
+  $(function() {
+    $("#btn_menu").click(function() {
+      $(this).toggleClass('on');
+      $("#mypage").toggleClass('on');
     });
 
-
-// "페이지 초기 체크 및 로드" Start >> 페이지 초기값 변수 설정후 함수로 변환
-
-
-
-
-    var page_open_load = function () {
-      var this_el = this_el_catch(),
-          next_el = this_el.closest("li").next().children(),
-          prev_el = this_el.closest("li").prev().children();
-
-      $("#active_page").load("./cnt/"+ this_el.attr('class') + ".html");
-      $("#prev_page").load("./cnt/"+ prev_el.attr('class') + ".html");
-      $("#next_page").load("./cnt/"+ next_el.attr('class') + ".html");
-      this_el.closest('li').addClass('on');
-    }
-
-    $(function(){
-      page_open_load();
-    });
-// << End "페이지 초기 체크 및 로드"
+    cate_load();
+    $('body').attr('id', 'pid_'+page_id);
+    page_open_load();
+  });
 
 
 // 서브메뉴 슬라이더
@@ -239,29 +220,24 @@
 
 
 // "컨텐츠 슬라이더" START >>
-    var cnt = $('#cnt'),
-        cnt_wrap = cnt.children().eq(0);
+  var cnt_move = function () {
+    var $cnt_el = $cnt_wrap.children(),
+        $this_el = $cnt_el.eq(1),
+        $next_el = $cnt_el.eq(2),
+        $prev_el = $cnt_el.eq(0);
 
-
-    var cnt_move = function () {
-      var cnt_el = cnt_wrap.children(),
-          this_el = this_el_catch(),
-          next_el = this_el.closest("li").next().children(),
-          prev_el = this_el.closest("li").prev().children();
-
-      if(prev 이동) {
-        url 해시 변경
-
-          cnt_wrap.prepend(cnt_el.eq(2)).load("./cnt/"+ prev_el.attr('class') + ".html");
-
-      } else if (next 이동) {
-          cnt_wrap.append(cnt_el.eq(0));
-      }
-
-      cnt_wrap.children().eq(0).attr('class', 'cnt_el swiper-slide swiper-slide-prev');
-      cnt_wrap.children().eq(1).attr('class', 'cnt_el swiper-slide swiper-slide-active');
-      cnt_wrap.children().eq(2).attr('class', 'cnt_el swiper-slide swiper-slide-next');
+    if(prev 이동) {
+      $next_el.load("./cnt/"+ $prev_el.attr('class') + ".html");
+      $cnt_wrap.prepend($next_el);
+    } else if (next 이동) {
+      $cnt_el.eq(2).load("./cnt/"+ $next_el.attr('class') + ".html");
+      $cnt_wrap.append($cnt_el.eq(0));
     }
+
+    $cnt_wrap.children().eq(0).attr('class', 'cnt_el swiper-slide swiper-slide-prev');
+    $cnt_wrap.children().eq(1).attr('class', 'cnt_el swiper-slide swiper-slide-active');
+    $cnt_wrap.children().eq(2).attr('class', 'cnt_el swiper-slide swiper-slide-next');
+  }
 
     var cnt_slider = new Swiper('.cnt_slider', {
       slidesPerView: 1,
