@@ -97,13 +97,13 @@
 
   <div id="cnt" class="cnt_slider swiper-container">
     <div class="swiper-wrapper">
-      <div class="cnt_el swiper-slide">
+      <div class="swiper-slide">
         <div id="prev_page"></div>
       </div>
-      <div class="cnt_el swiper-slide">
+      <div class="swiper-slide">
         <div id="active_page"></div>
       </div>
-      <div class="cnt_el swiper-slide">
+      <div class="swiper-slide">
         <div id="next_page"></div>
       </div>
     </div>
@@ -272,7 +272,7 @@
       $cnt_wrap.append($prev_el);
     }
 
-    $prev_el.children().eq(0).attr('class', 'swiper-slide swiper-slide-prev');
+    $prev_el.attr('class', 'swiper-slide swiper-slide-prev');
     $active_el.attr('class', 'swiper-slide swiper-slide-active');
     $next_el.attr('class', 'swiper-slide swiper-slide-next');
   }
