@@ -216,12 +216,12 @@
       $el.parent().attr('data-id',next_id);
     } else {
       $el.load("./cnt/"+ active_id + ".html");
-      $el.parent().attr('data-id',active_id);
+      $el.parent().attr('data-id',active_id).attr('class','swiper-slide swiper-slide-active on');
     }
   }
 
   var nav_1_reset_on = function() {
-    var active_id = $cnt_wrap.children('.swiper-slide-active').attr('data-id');
+    var active_id = $cnt_wrap.children('.on').attr('data-id');
 
     $nav_1.children().removeClass('on');
     $nav_1.children('#'+active_id).addClass('on');
@@ -264,16 +264,16 @@
         $next_el = $cnt_el.eq(2),
         $prev_el = $cnt_el.eq(0);
 
-    if($prev_el.hasClass('swiper-slide-active')) {
+    if($prev_el.hasClass('on')) {
       page_load('prev');
       $cnt_wrap.prepend($next_el);
-    } else if ($next_el.hasClass('swiper-slide-active')) {
+    } else if ($next_el.hasClass('on')) {
       page_load('next');
       $cnt_wrap.append($prev_el);
     }
 
     $prev_el.attr('class', 'swiper-slide swiper-slide-prev');
-    $active_el.attr('class', 'swiper-slide swiper-slide-active');
+    $active_el.attr('class', 'swiper-slide swiper-slide-active on');
     $next_el.attr('class', 'swiper-slide swiper-slide-next');
   }
 
