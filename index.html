@@ -200,14 +200,21 @@
   }
 
 
-  var page_load = function() {
-    var $active_el = $('#'+page_id),
-        $next_el = $('#'+next_el_id).next(),
-        $prev_el = $('#'+prev_el_id).prev();
+  var page_load = function(direction) {
+    var $el = $('#'+direction+'_page');
 
-    $("#active_page").load("./cnt/"+ start_page_id + ".html");
-    $("#prev_page").load("./cnt/"+ prev_el.attr('id') + ".html");
-    $("#next_page").load("./cnt/"+ next_el.attr('id') + ".html");
+    if(direction === 'prev') {
+      $el.load("./cnt/"+ prev_el_id + ".html");
+      $el.parent().attr('data-id',prev_el_id);
+    } else if (direction === 'next') {
+      $el.load("./cnt/"+ next_el_id + ".html");
+      $el.parent().attr('data-id',next_el_id);
+    } else if (direction === 'acitve'){
+      $el.load("./cnt/"+ page_id + ".html");
+      $el.parent().attr('data-id',page_id);
+    } else {
+      alert('페이지로드에 실패하였습니다. 페이지를 새로고침해주세요.')
+    }
   }
 
 
@@ -220,7 +227,9 @@
     cate_load();
     $('body').attr('id', 'pid_'+start_page_id);
     $('#'+start_page_id).addClass('on')
-    page_load();
+    page_load(active);
+    page_load(next);
+    page_load(prev);
   });
 
 
@@ -247,16 +256,16 @@
         $prev_el = $cnt_el.eq(0);
 
     if($prev_el.hasClass('swiper-slide-active')) {
-      $next_el.load();
+      page_load(prev);
       $cnt_wrap.prepend($next_el);
     } else if ($next_el.hasClass('swiper-slide-active')) {
-      $cnt_el.eq(2).load("./cnt/"+ $next_el.attr('class') + ".html");
+      page_load(next);
       $cnt_wrap.append($prev_el);
     }
 
-    $prev_el.children().eq(0).attr('class', 'cnt_el swiper-slide swiper-slide-prev');
-    $active_el.attr('class', 'cnt_el swiper-slide swiper-slide-active');
-    $next_el.attr('class', 'cnt_el swiper-slide swiper-slide-next');
+    $prev_el.children().eq(0).attr('class', 'swiper-slide swiper-slide-prev');
+    $active_el.attr('class', 'swiper-slide swiper-slide-active');
+    $next_el.attr('class', 'swiper-slide swiper-slide-next');
   }
 
     var cnt_slider = new Swiper('.cnt_slider', {
