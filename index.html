@@ -136,15 +136,6 @@
         enter: "연예",
         sports: "스포츠"
       },
-      start_page_id = function() {
-        var page_hash = location.hash;
-
-        if(page_hash == "") {
-          return "home"
-        } else {
-          return page_hash.replace('#','')
-        }
-      },
       $cnt_wrap = $('#cnt').children().eq(0),
       $nav_1 = $('#nav_1 .swiper-wrapper'),
       cate_length = Object.keys(user_cate).length;
@@ -152,6 +143,17 @@
 
 
 // Start [1depth 메뉴 로드 ->> cate_load()]
+
+  var start_page_id = function() {
+    var page_hash = location.hash;
+
+    if(page_hash == "") {
+      return "home"
+    } else {
+      return page_hash.replace('#','')
+    }
+  }
+  
   var cate_load = function() {
 
     for (var i = 0; i < cate_length; i++) {
@@ -217,6 +219,12 @@
     }
   }
 
+  var nav_1_reset_on = function() {
+    var active_id = $cnt_wrap.children('.swiper-slide-active').attr('data-id'),
+
+    $nav_1.children().removeClass('on');
+    $nav_1.children('#'+active_id).addClass('on');
+  }
 
   $(function() {
     $("#btn_menu").click(function() {
@@ -277,6 +285,8 @@
       freeMode: false,
       on: {
         slideChangeTransitionEnd: function () {
+          cnt_move();
+          nav_1_reset_on();
         },
       }
     });
