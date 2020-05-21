@@ -180,43 +180,44 @@
 
 
   var page_id = function() {
-    $nav_1.children('.on').attr('id');
+    return $nav_1.children('.on').attr('id');
   }
 
   var next_el_id = function() {
     var $next_el = $nav_1.children('.on').next();
     if($next_el){
-      $next_el.attr('id');
+      return $next_el.attr('id');
     } else {
-      $nav_1.children().first().attr('id');
+      return $nav_1.children().first().attr('id');
     }
   }
 
   var prev_el_id = function() {
     var $prev_el = $nav_1.children('.on').prev();
     if($prev_el){
-      $prev_el.attr('id');
+      return $prev_el.attr('id');
     } else {
-      $nav_1.children().last().attr('id');
+      return $nav_1.children().last().attr('id');
     }
   }
 
 
   var page_load = function(direction) {
-    var $el = $('#'+direction+'_page');
+    var $el = $('#'+direction+'_page'),
+        prev_id = prev_el_id(),
+        active_id = page_id(),
+        next_id = next_el_id();
 
     if(direction == 'prev') {
-      $el.load("./cnt/"+ prev_el_id + ".html");
-      $el.parent().attr('data-id',prev_el_id);
+      $el.load("./cnt/"+ prev_id + ".html");
+      $el.parent().attr('data-id',prev_id);
     } else if (direction == 'next') {
-      $el.load("./cnt/"+ next_el_id + ".html");
-      $el.parent().attr('data-id',next_el_id);
-    } else if (direction == 'acitve'){
-      $el.load("./cnt/"+ page_id + ".html");
-      $el.parent().attr('data-id',page_id);
+      $el.load("./cnt/"+ next_id + ".html");
+      $el.parent().attr('data-id',next_id);
     } else {
-      alert('페이지로드에 실패하였습니다. 페이지를 새로고침해주세요.')
-    }
+      $el.load("./cnt/"+ active_id + ".html");
+      $el.parent().attr('data-id',active_id);
+    } 
   }
 
   var nav_1_reset_on = function() {
