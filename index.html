@@ -138,7 +138,7 @@
 // End [변수 선언]
 
 
-// Start [1depth 메뉴 로드 ->> cate_load()]
+
   var cate_index = function (key_value) {
     for (var i = 0; i < cate_length; i++) {
       var data = Object.keys(user_cate)[i];
@@ -192,7 +192,7 @@
     });
 
   }
-// << End "1depth 메뉴"
+
 
   $(function() {
     $("#btn_menu").click(function() {
@@ -209,8 +209,8 @@
         active_id = Object.keys(user_cate)[cate_num],
         next_id = Object.keys(user_cate)[cate_num+1];
 
-    $cnt_list.eq(1).attr('data-id',prev_id).load("./cnt/"+ start_page_id() + ".html");
-    $cnt_list.eq(0).attr('data-id',active_id).load("./cnt/"+ prev_id + ".html");
+    $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
+    $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
     $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
   });
 
