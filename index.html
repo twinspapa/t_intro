@@ -193,56 +193,24 @@
   }
 // << End "1depth 메뉴"
 
-
-  // var page_load = function(active_id,direction) {
-  //   var active_num = cate_index(active_id),
-  //       prev_num = active_num[0],
-  //       next_num = active_num[2],
-  //       prev_id = Object.keys(user_cate)[prev_num],
-  //       next_id = Object.keys(user_cate)[next_num],
-  //       $active_el = $cnt_wrap.eq(1);
-  //
-  //   if (direction == 'prev') {
-  //     $active_el.removeClass('on').prev().addClass('on');
-  //     $el.load("./cnt/"+ prev_id + ".html");
-  //     $el.parent().attr('data-id',prev_id);
-  //     $body.attr('id', 'pid_'+ active_id);
-  //   } else if (direction == 'next') {
-  //     $active_el.removeClass('on').next().addClass('on');
-  //     $el.load("./cnt/"+ next_id + ".html");
-  //     $el.parent().attr('data-id',next_id);
-  //     $body.attr('id', 'pid_'+ active_id);
-  //   } else if (direction == 'active'){
-  //     $active_el.addClass('on');
-  //     $el.load("./cnt/"+ active_id + ".html");
-  //     $el.parent().attr('data-id',active_id);
-  //     $body.attr('id', 'pid_'+ active_id);
-  //   } else {
-  //     var active_num = cate_index(direction),
-  //     if (active_num = 0){
-  //       var prev_num = cate_length - 1,
-  //           prev_id = Object.keys(user_cate)[prev_num],
-  //           next_id = Object.keys(user_cate)[next_num],
-  //     } else if(active_num = cate_length) {
-  //       var next_num =  0,
-  //           prev_id = Object.keys(user_cate)[prev_num],
-  //           next_id = Object.keys(user_cate)[next_num],
-  //     }
-  //     $('#active_page').load("./cnt/"+ direction + ".html");
-  //     $('#next_page').load("./cnt/"+ next_id + ".html");
-  //     $('#prev_page').load("./cnt/"+ prev_id + ".html");
-  //   }
-  // }
-
   $(function() {
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
     });
     $cnt_list.eq(1).addClass('on')
-    cate_load();
     $('#'+start_page_id()).addClass('on');
     $body.attr('id', 'pid_'+ start_page_id());
+
+    var page_id = $body.attr('id').replace('pid_',''),
+        cate_num = cate_index(page_id)[0],
+        prev_id = Object.keys(user_cate)[cate_num-1],
+        active_id = Object.keys(user_cate)[cate_num],
+        next_id = Object.keys(user_cate)[cate_num+1];
+
+    $cnt_list.eq(1).load("./cnt/"+ start_page_id() + ".html");
+    $cnt_list.eq(0).load("./cnt/"+ pprev_id + ".html");
+    $cnt_list.eq(2).load("./cnt/"+ next_id + ".html");
   });
 
 
@@ -274,7 +242,7 @@
         cate_num = cate_index(page_id)[0],
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1],
+        next_id = Object.keys(user_cate)[cate_num+1];
 
     $('#'+page_id).removeClass('on').prev().addClass('on');
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide swiper-slide-next'></div>");
@@ -286,7 +254,7 @@
         cate_num = cate_index(page_id)[2],
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1],
+        next_id = Object.keys(user_cate)[cate_num+1];
 
     $('#'+page_id).removeClass('on').next().addClass('on');
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide swiper-slide-next'></div>");
