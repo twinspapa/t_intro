@@ -247,7 +247,7 @@
     $body.attr('id','pid_'+active_id);
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
-    $cnt_list.eq(0).load("./cnt/"+ prev_id + ".html");
+    $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
@@ -259,7 +259,7 @@
     $body.attr('id','pid_'+active_id);
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
-    $cnt_list.eq(2).load("./cnt/"+ next_id + ".html");
+    $('[data-id='+next_id+']').load("./cnt/"+ next_id + ".html");
   });
 // << END "컨텐츠 슬라이더"
   </script>
