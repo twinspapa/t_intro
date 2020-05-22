@@ -240,7 +240,9 @@
 
     $('#'+page_id).removeClass('on').prev().addClass('on');
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide swiper-slide-next'></div>");
+    $cnt_list.eq(0).load("./cnt/"+ prev_id + ".html");
     cnt_slider.removeSlide(3);
+    $body.attr('id','pid_'+active_id);
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
@@ -252,7 +254,9 @@
 
     $('#'+page_id).removeClass('on').next().addClass('on');
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide swiper-slide-next'></div>");
+    $cnt_list.eq(0).load("./cnt/"+ next_id + ".html");
     cnt_slider.removeSlide(0);
+    $body.attr('id','pid_'+active_id);
   });
 // << END "컨텐츠 슬라이더"
   </script>
