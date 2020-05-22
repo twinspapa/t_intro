@@ -136,9 +136,10 @@
         enter: "연예",
         sports: "스포츠"
       },
-      $cnt_wrap = $('#cnt').children().eq(0),
       $nav_1 = $('#nav_1 .swiper-wrapper'),
       cate_length = Object.keys(user_cate).length,
+      $cnt_wrap = $('#cnt').children().eq(0),
+      $cnt_list = $cnt_wrap.children(),
       $body = $('body');
 // End [변수 선언]
 
@@ -148,8 +149,12 @@
     for (var i = 0; i < cate_length; i++) {
       var data = Object.keys(user_cate)[i];
 
-      if( key_value == data ) {
-        return i
+      if(key_value == data && i == 0) {
+        return [cate_length-1, i, i+1];
+      } else if (key_value == data && i == cate_length-1) {
+        return [i-1, i, 0];
+      } else if (key_value == data) {
+        return [i-1, i, i+1];
       }
     }
   }
@@ -189,48 +194,44 @@
 // << End "1depth 메뉴"
 
 
-  var page_load = function(direction) {
-    var $el = $('#'+direction+'_page'),
-        $active_el = $cnt_wrap.children('.on'),
-        active_id = $active_el.attr('data-id'),
-        active_num = cate_index(active_id),
-        prev_num = active_num - 1,
-        next_num = active_num + 1,
+  var page_load = function(active_id,direction) {
+    var active_num = cate_index(active_id),
+        prev_num = active_num[0],
+        next_num = active_num[2],
         prev_id = Object.keys(user_cate)[prev_num],
-        next_id = Object.keys(user_cate)[next_num];
-
-    if (active_num = 0){
-      var prev_num = cate_length - 1,
-          prev_id = Object.keys(user_cate)[prev_num],
-          next_id = Object.keys(user_cate)[next_num],
-          $active_el = $cnt_wrap.children('.on'),
-          active_id = $active_el.attr('data-id');
-    } else if(active_num = cate_length) {
-      var next_num =  0,
-          prev_id = Object.keys(user_cate)[prev_num],
-          next_id = Object.keys(user_cate)[next_num],
-          $active_el = $cnt_wrap.children('.on'),
-          active_id = $active_el.attr('data-id');
-    }
+        next_id = Object.keys(user_cate)[next_num],
+        $active_el = $cnt_wrap.eq(1);
 
     if (direction == 'prev') {
       $active_el.removeClass('on').prev().addClass('on');
       $el.load("./cnt/"+ prev_id + ".html");
       $el.parent().attr('data-id',prev_id);
+      $body.attr('id', 'pid_'+ active_id);
     } else if (direction == 'next') {
       $active_el.removeClass('on').next().addClass('on');
       $el.load("./cnt/"+ next_id + ".html");
       $el.parent().attr('data-id',next_id);
+      $body.attr('id', 'pid_'+ active_id);
     } else if (direction == 'active'){
       $active_el.addClass('on');
       $el.load("./cnt/"+ active_id + ".html");
       $el.parent().attr('data-id',active_id);
+      $body.attr('id', 'pid_'+ active_id);
     } else {
-      $('#active_page').load("./cnt/"+ active_id + ".html");
+      var active_num = cate_index(direction),
+      if (active_num = 0){
+        var prev_num = cate_length - 1,
+            prev_id = Object.keys(user_cate)[prev_num],
+            next_id = Object.keys(user_cate)[next_num],
+      } else if(active_num = cate_length) {
+        var next_num =  0,
+            prev_id = Object.keys(user_cate)[prev_num],
+            next_id = Object.keys(user_cate)[next_num],
+      }
+      $('#active_page').load("./cnt/"+ direction + ".html");
       $('#next_page').load("./cnt/"+ next_id + ".html");
       $('#prev_page').load("./cnt/"+ prev_id + ".html");
     }
-    $body.attr('id', 'pid_'+ active_id);
   }
 
   $(function() {
@@ -238,10 +239,10 @@
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
     });
-
+    $cnt_list.eq(1).addClass('on')
     cate_load();
+    $('#'+start_page_id()).addClass('on');
     $body.attr('id', 'pid_'+ start_page_id());
-    $('#'+start_page_id()).addClass('on')
     page_load();
   });
 
@@ -269,14 +270,28 @@
     autoHeight: true
   });
   cnt_slider.on('slidePrevTransitionEnd', function () {
-    console.log('slidePrevTransitionEnd');
-    page_load('prev');
+    var page_id = $body.attr('id').replace('pid_',''),
+        cate_num = cate_index(page_id)[0],
+        prev_id = Object.keys(user_cate)[cate_num-1],
+        active_id = Object.keys(user_cate)[cate_num],
+        next_id = Object.keys(user_cate)[cate_num+1],
+
+    $('#'+page_id).removeClass('on').prev().addClass('on');
+    cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide swiper-slide-next'></div>");
+    cnt_slider.removeSlide(3);
+  });
+  cnt_slider.on('slideNextTransitionEnd', function () {
+    var page_id = $body.attr('id').replace('pid_',''),
+        cate_num = cate_index(page_id)[2],
+        prev_id = Object.keys(user_cate)[cate_num-1],
+        active_id = Object.keys(user_cate)[cate_num],
+        next_id = Object.keys(user_cate)[cate_num+1],
+
+    $('#'+page_id).removeClass('on').next().addClass('on');
+    cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide swiper-slide-next'></div>");
+    cnt_slider.removeSlide(0);
   });
 
-  cnt_slider.on('slideNextTransitionEnd', function () {
-    console.log('slideNextTransitionEnd');
-    page_load('next');
-  });
 // << END "컨텐츠 슬라이더"
   </script>
 </body>
