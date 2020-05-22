@@ -197,7 +197,7 @@
     $body.attr('id', 'pid_'+ start_page_id());
 
     var page_id = start_page_id(),
-        cate_num = cate_index(page_id)[0],
+        cate_num = cate_index(page_id)[1],
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
         next_id = Object.keys(user_cate)[cate_num+1];
