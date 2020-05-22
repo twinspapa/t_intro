@@ -176,19 +176,7 @@
 
       $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#'>"+data_name+"</a></li>");
     }
-
-    var depth_1 = new Swiper('.depth_1', {
-      slidesPerView: 'auto',
-      spaceBetween: 0,
-      centeredSlides: false,
-      initialSlide: 3,
-      hashNavigation: {
-        watchState: true,
-        replaceState: true,
-      },
-      freeMode: true
-    });
-
+    depth_1.update();
   }
 
 
@@ -212,6 +200,17 @@
     $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
   });
 
+  var depth_1 = new Swiper('.depth_1', {
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    centeredSlides: false,
+    initialSlide: 3,
+    hashNavigation: {
+      watchState: true,
+      replaceState: true,
+    },
+    freeMode: true
+  });
 
 // 서브메뉴 슬라이더
     var depth_2 = new Swiper('.depth_2', {
@@ -246,6 +245,7 @@
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
     $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
+    depth_1.slidePrev();
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
@@ -258,6 +258,7 @@
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
     $('[data-id='+next_id+']').load("./cnt/"+ next_id + ".html");
+    depth_1.slideNext();
   });
 // << END "컨텐츠 슬라이더"
   </script>
