@@ -252,9 +252,9 @@
 
   cnt_slider.on('slideNextTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[0]],
-        active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
-        next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
+        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,2)[0]],
+        active_id = Object.keys(user_cate)[chk_append_id(page_id,2)[1]],
+        next_id =  Object.keys(user_cate)[chk_append_id(page_id,2)[2]];
 
     $body.attr('id','pid_'+active_id);
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
