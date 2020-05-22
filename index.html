@@ -137,8 +137,6 @@
       $body = $('body');
 // End [변수 선언]
 
-
-
   var cate_index = function (key_value) {
     for (var i = 0; i < cate_length; i++) {
       var data = Object.keys(user_cate)[i];
@@ -153,7 +151,7 @@
     }
   }
 
-  var chk_append_id = function (key_value,direction_num) {
+  var chk_append_index = function (key_value,direction_num) {
     var el_num1 = cate_index(key_value)[direction_num],
         el_id1 = Object.keys(user_cate)[el_num1];
 
@@ -240,9 +238,9 @@
 
   cnt_slider.on('slidePrevTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[0]],
-        active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
-        next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
+        prev_id =  Object.keys(user_cate)[chk_append_index(page_id,0)[0]],
+        active_id = Object.keys(user_cate)[chk_append_index(page_id,0)[1]],
+        next_id =  Object.keys(user_cate)[chk_append_index(page_id,0)[2]];
 
     $body.attr('id','pid_'+active_id);
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
@@ -252,9 +250,9 @@
 
   cnt_slider.on('slideNextTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,2)[0]],
-        active_id = Object.keys(user_cate)[chk_append_id(page_id,2)[1]],
-        next_id =  Object.keys(user_cate)[chk_append_id(page_id,2)[2]];
+        prev_id =  Object.keys(user_cate)[chk_append_index(page_id,2)[0]],
+        active_id = Object.keys(user_cate)[chk_append_index(page_id,2)[1]],
+        next_id =  Object.keys(user_cate)[chk_append_index(page_id,2)[2]];
 
     $body.attr('id','pid_'+active_id);
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
