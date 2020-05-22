@@ -199,6 +199,7 @@
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
     });
+    cate_load();
     $cnt_list.eq(1).addClass('on')
     $('#'+start_page_id()).addClass('on');
     $body.attr('id', 'pid_'+ start_page_id());
@@ -244,7 +245,6 @@
         active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
         next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
 
-    $('#'+page_id).removeClass('on').prev().addClass('on');
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     $cnt_list.eq(0).load("./cnt/"+ prev_id + ".html");
     cnt_slider.removeSlide(3);
@@ -257,7 +257,6 @@
         active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
         next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
 
-    $('#'+page_id).removeClass('on').next().addClass('on');
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
     $cnt_list.eq(0).load("./cnt/"+ next_id + ".html");
     cnt_slider.removeSlide(0);
