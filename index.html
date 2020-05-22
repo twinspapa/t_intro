@@ -153,6 +153,13 @@
     }
   }
 
+  var chk_append_id = function (key_value,direction_num) {
+    var el_num1 = cate_index(key_value)[direction_num],
+        el_id1 = Object.keys(user_cate)[el_num1];
+
+    return cate_index(el_id1);
+  }
+
   var start_page_id = function() {
     var page_hash = location.hash;
 
@@ -233,10 +240,9 @@
 
   cnt_slider.on('slidePrevTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        cate_num = cate_index(page_id)[0],
-        prev_id = Object.keys(user_cate)[cate_num-1],
-        active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1];
+        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[0]],
+        active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
+        next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
 
     $('#'+page_id).removeClass('on').prev().addClass('on');
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide swiper-slide-next'></div>");
@@ -247,10 +253,9 @@
 
   cnt_slider.on('slideNextTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        cate_num = cate_index(page_id)[2],
-        prev_id = Object.keys(user_cate)[cate_num-1],
-        active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1];
+        prev_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[0]],
+        active_id = Object.keys(user_cate)[chk_append_id(page_id,0)[1]],
+        next_id =  Object.keys(user_cate)[chk_append_id(page_id,0)[2]];
 
     $('#'+page_id).removeClass('on').next().addClass('on');
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide swiper-slide-next'></div>");
