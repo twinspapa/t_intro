@@ -117,8 +117,7 @@
       cate_length = Object.keys(user_cate).length,
       $cnt_wrap = $('#cnt').children().eq(0),
       $cnt_list = $cnt_wrap.children(),
-      $body = $('body'),
-      page_id = '';
+      $body = $('body');
 // End [변수 선언]
 
 // Start [Global 변수 선언]
@@ -139,8 +138,6 @@
 // End [변수 선언]
 
   $(function() {
-    var page_id = chk_page_id();
-
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
@@ -148,8 +145,8 @@
 
     cate_load(user_cate, '.depth_1 .swiper-wrapper');
     depth_1.update();
-    depth_1.slideTo(chk_obj_el_index(user_cate, page_id);
-    cnt_load(user_cate, page_id);
+    depth_1.slideTo(chk_obj_el_index(user_cate, chk_page_id());
+    cnt_load(user_cate, chk_page_id());
 
     $("#nav_1 .swiper-slide").click(function() {
       var clk_id = $(this).attr('id'),
@@ -209,7 +206,7 @@
   });
 // << END "컨텐츠 슬라이더"
   </script>
-  
+
   <script src="./res/js/index.js" charset="utf-8"></script>
 </body>
 
