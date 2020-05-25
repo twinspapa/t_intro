@@ -1,4 +1,4 @@
-var start_page_id= function() {
+function chk_page_id() {
   var page_hash = location.hash;
 
   if(page_hash == "" || page_hash == "#null" || page_hash == '#undefiend' || page_hash == '#') {
@@ -8,40 +8,56 @@ var start_page_id= function() {
   }
 }
 
-var cate_index = function(key_value)  {
-  for (var i = 0; i < cate_length; i++) {
-    var data = Object.keys(user_cate)[i];
+function chk_obj_el_index(obj_name, key_name, direction){
+  var obj = obj_name,
+      arry = Object.keys(obj),
+      length = arry.length,
+      key = key_name;
 
-    if(key_value == data && i == 0) {
-      return [cate_length-1, i, i+1];
-    } else if (key_value == data && i == cate_length-1) {
-      return [i-1, i, 0];
-    } else if (key_value == data) {
-      return [i-1, i, i+1];
+  for (var i = 0; i < length; i++) {
+    var data = arry[i];
+
+    if (! direction) {
+      if(key == data && i == 0) {
+        return [length-1, i, i+1];
+      } else if (key == data && i == length-1) {
+        return [i-1, i, 0];
+      } else if (key == data) {
+        return [i-1, i, i+1];
+      }
+    } else if (direction == 'prev') {
+      if(key == data && i == 0) {
+        return [length-2, length-1, i];
+      } else if (key == data && i == 1) {
+        return [length-1, i-1, i];
+      } else if (key == data) {
+        return [i-2, i-1, i];
+      }
+    } else if (direction == 'next') {
+      if(key == data && i == length-1) {
+        return [length-1, 0, 1];
+      } else if (key == data && i == length-2) {
+        return [length-2, length-1, 0];
+      } else if (key == data) {
+        return [i, i+1, i+2];
+      }
     }
   }
 }
 
-var chk_append_index = function(key_value,direction_num) {
-  var el_num1 = cate_index(key_value)[direction_num],
-      el_id1 = Object.keys(user_cate)[el_num1];
+function cate_load(obj_name, appen_div) {
+  var obj = obj_name,
+      arry = Object.keys(obj),
+      length = arry.length,
+      el = $(appen_div);
 
-  return cate_index(el_id1);
-}
-
-function cate_load() {
-  for (var i = 0; i < cate_length; i++) {
-    var data = Object.keys(user_cate)[i],
-        data_name = user_cate[data];
-
-    $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#"+data+"'>"+data_name+"</a></li>");
+  for (var i = 0; i < length; i++) {
+    $nav_1.append("<li id="+arry[i]+" class='swiper-slide'><a href='#"+arry[i]+"'>"+obj[arry[i]]+"</a></li>");
   }
-  depth_1.update();
-  depth_1.slideTo(cate_index(start_page_id())[1]);
 }
 
-function cnt_load(load_cnt_id) {
-  var cate_num = cate_index(load_cnt_id),
+function cnt_load(obj_name, key_name, direction) {
+  var cate_num = chk_obj_el_index(obj_name, key_name, direction),
       prev_id = Object.keys(user_cate)[cate_num[0]],
       active_id = Object.keys(user_cate)[cate_num[1]],
       next_id = Object.keys(user_cate)[cate_num[2]];

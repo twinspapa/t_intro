@@ -143,14 +143,16 @@
       $("#mypage").toggleClass('on');
     });
 
-    cate_load();
-    cnt_load(start_page_id());
+    cate_load(user_cate, '.depth_1 .swiper-wrapper');
+    depth_1.update();
+    depth_1.slideTo(cate_index(chk_page_id())[1]);
+    cnt_load(user_cate, chk_page_id());
 
     $("#nav_1 .swiper-slide").click(function() {
       var clk_id = $(this).attr('id'),
-          clk_num = cate_index(clk_id)[1];
+          clk_num = chk_obj_el_index(user_cate, clk_id);
 
-      cnt_load(clk_id);
+      cnt_load(user_cate, clk_id);
       depth_1.slideTo(clk_num);
     });
   });
@@ -184,28 +186,24 @@
 
   cnt_slider.on('slidePrevTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        prev_id =  Object.keys(user_cate)[chk_append_index(page_id,0)[0]],
-        active_id = Object.keys(user_cate)[chk_append_index(page_id,0)[1]],
-        next_id =  Object.keys(user_cate)[chk_append_index(page_id,0)[2]];
+        arry = chk_obj_el_index(user_cate,page_id,'prev');
 
-    $body.attr('id','pid_'+active_id);
-    cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
+    $body.attr('id','pid_'+ arry[1]);
+    cnt_slider.prependSlide("<div data-id="+arry[0]+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
-    $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
-    depth_1.slideTo(chk_append_index(page_id,0)[1]);
+    $('[data-id='+arry[0]+']').load("./cnt/"+ arry[0] + ".html");
+    depth_1.slideTo(arry[1]);
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
     var page_id = $body.attr('id').replace('pid_',''),
-        prev_id =  Object.keys(user_cate)[chk_append_index(page_id,2)[0]],
-        active_id = Object.keys(user_cate)[chk_append_index(page_id,2)[1]],
-        next_id =  Object.keys(user_cate)[chk_append_index(page_id,2)[2]];
+        arry = chk_obj_el_index(user_cate,page_id,'next');
 
-    $body.attr('id','pid_'+active_id);
-    cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
+    $body.attr('id','pid_'+ arry[1]);
+    cnt_slider.appendSlide("<div data-id="+ arry[2] +" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
-    $('[data-id='+next_id+']').load("./cnt/"+ next_id + ".html");
-    depth_1.slideTo(chk_append_index(page_id,2)[1]);
+    $('[data-id='+ arry[2] +']').load("./cnt/"+ arry[2] +".html");
+    depth_1.slideTo(arry[1]);
   });
 // << END "컨텐츠 슬라이더"
 
