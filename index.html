@@ -191,7 +191,6 @@
       $("#mypage").toggleClass('on');
     });
     cate_load();
-    $('#'+page_id).addClass('on');
     $body.attr('id', 'pid_'+ page_id);
 
     $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
