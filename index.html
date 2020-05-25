@@ -117,7 +117,8 @@
       cate_length = Object.keys(user_cate).length,
       $cnt_wrap = $('#cnt').children().eq(0),
       $cnt_list = $cnt_wrap.children(),
-      $body = $('body');
+      $body = $('body'),
+      page_id = chk_page_id();
 // End [변수 선언]
 
 // Start [Global 변수 선언]
@@ -145,7 +146,7 @@
 
     cate_load(user_cate, '.depth_1 .swiper-wrapper');
     depth_1.update();
-    depth_1.slideTo(cate_index(chk_page_id())[1]);
+    depth_1.slideTo(chk_obj_el_index(user_cate, page_id);
     cnt_load(user_cate, chk_page_id());
 
     $("#nav_1 .swiper-slide").click(function() {
