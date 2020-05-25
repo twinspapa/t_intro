@@ -184,7 +184,7 @@
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
         next_id = Object.keys(user_cate)[cate_num+1];
-    
+
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
@@ -205,7 +205,7 @@
     spaceBetween: 0,
     loop: true,
     centeredSlides: true,
-    initialSlide: cate_num,
+    initialSlide: cate_index(page_id)[1],
     hashNavigation: {
       watchState: true,
       replaceState: true,
