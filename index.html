@@ -179,11 +179,11 @@
   }
 
   $(function() {
-    page_id = start_page_id(),
-    cate_num = cate_index(page_id)[1],
-    prev_id = Object.keys(user_cate)[cate_num-1],
-    active_id = Object.keys(user_cate)[cate_num],
-    next_id = Object.keys(user_cate)[cate_num+1];
+    var page_id = start_page_id(),
+        cate_num = cate_index(page_id)[1],
+        prev_id = Object.keys(user_cate)[cate_num-1],
+        active_id = Object.keys(user_cate)[cate_num],
+        next_id = Object.keys(user_cate)[cate_num+1];
     
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
