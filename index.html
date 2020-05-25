@@ -173,7 +173,7 @@
       var data = Object.keys(user_cate)[i],
           data_name = user_cate[Object.keys(user_cate)[i]];
 
-      $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#'"+data+">"+data_name+"</a></li>");
+      $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#"+data+"'>"+data_name+"</a></li>");
     }
     depth_1.update();
     depth_1.slideTo(cate_index(start_page_id())[1]);
@@ -198,7 +198,7 @@
       $("#mypage").toggleClass('on');
     });
     $("#nav_1 .swiper-slide").click(function() {
-      var page_id = $(this).attr(id);
+      var page_id = $(this).closest().attr(id);
 
       cnt_load([page_id]);
     });
