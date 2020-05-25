@@ -186,9 +186,9 @@
     autoHeight: true
   });
 
-  cnt_slider.on('slidePrevTransitionEnd', function () {
+  cnt_slider.on('slidePrevTransitionEnd', function() {
     var page_id = $body.attr('id').replace('pid_',''),
-        arry = chk_obj_el_index(user_cate,page_id,'prev');
+        arry = chk_obj_el_index(user_cate, page_id, 'prev');
 
     $body.attr('id','pid_'+ arry[1]);
     cnt_slider.prependSlide("<div data-id="+arry[0]+" class='swiper-slide'></div>");
@@ -197,9 +197,9 @@
     depth_1.slideTo(arry[1]);
   });
 
-  cnt_slider.on('slideNextTransitionEnd', function () {
+  cnt_slider.on('slideNextTransitionEnd', function() {
     var page_id = $body.attr('id').replace('pid_',''),
-        arry = chk_obj_el_index(user_cate,page_id,'next');
+        arry = chk_obj_el_index(user_cate, page_id, 'next');
 
     $body.attr('id','pid_'+ arry[1]);
     cnt_slider.appendSlide("<div data-id="+ arry[2] +" class='swiper-slide'></div>");
@@ -208,8 +208,8 @@
     depth_1.slideTo(arry[1]);
   });
 // << END "컨텐츠 슬라이더"
-
   </script>
+  
   <script src="./res/js/index.js" charset="utf-8"></script>
 </body>
 
