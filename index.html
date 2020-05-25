@@ -248,7 +248,7 @@
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
     $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
-    depth_1.slideTo(chk_append_index(page_id,2)[1]);
+    depth_1.slideTo(chk_append_index(page_id,0)[1]);
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
