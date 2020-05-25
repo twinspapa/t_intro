@@ -173,29 +173,37 @@
       var data = Object.keys(user_cate)[i],
           data_name = user_cate[Object.keys(user_cate)[i]];
 
-      $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#'>"+data_name+"</a></li>");
+      $nav_1.append("<li id="+data+" class='swiper-slide'><a href='#'"+data+">"+data_name+"</a></li>");
     }
     depth_1.update();
     depth_1.slideTo(cate_index(start_page_id())[1]);
   }
 
-  $(function() {
+  function cnt_load() {
     var page_id = start_page_id(),
         cate_num = cate_index(page_id)[1],
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
         next_id = Object.keys(user_cate)[cate_num+1];
 
+        $body.attr('id', 'pid_'+ page_id);
+
+        $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
+        $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
+        $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
+  }
+
+  $(function() {
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
     });
+    $("#nav_1 .swiper-slide").click(function() {
+      $(this).toggleClass('on');
+      $("#mypage").toggleClass('on');
+    });
     cate_load();
-    $body.attr('id', 'pid_'+ page_id);
-
-    $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
-    $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
-    $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
+    cnt_load();
   });
 
 
