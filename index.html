@@ -200,7 +200,7 @@
     var page_id = $body.attr('id').replace('pid_',''),
         arry = chk_obj_el_index(user_cate, page_id, 'prev');
 
-    $body.attr('id','pid_'+ arry[1]);
+    $body.attr('id','pid_'+ Object.keys(user_cate)[arry[1]]);
     cnt_slider.prependSlide("<div data-id="+arry[0]+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
     $('[data-id='+arry[0]+']').load("./cnt/"+ arry[0] + ".html");
@@ -211,7 +211,7 @@
     var page_id = $body.attr('id').replace('pid_',''),
         arry = chk_obj_el_index(user_cate, page_id, 'next');
 
-    $body.attr('id','pid_'+ arry[1]);
+    $body.attr('id','pid_'+ Object.keys(user_cate)[arry[1]]);
     cnt_slider.appendSlide("<div data-id="+ arry[2] +" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
     $('[data-id='+ arry[2] +']').load("./cnt/"+ arry[2] +".html");
