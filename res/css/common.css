@@ -86,8 +86,6 @@ input[type="tel"]{caret-color: #ef0775;-webkit-user-select:auto;user-select:auto
 }
 
 img {
-    width: 100%;
-    height: auto;
     vertical-align: top;
 }
 
@@ -241,8 +239,8 @@ article div{
     border-radius: 44px;
 }
 
-.cnt_slider {
-    margin-top: 140px;
+.wrap {
+    margin-top: 104px;
 }
 
 #search_wrap {
@@ -251,4 +249,67 @@ article div{
 
 #nav_2 {
     display: none;
+}
+
+.logo {
+    padding-bottom: 36px;
+    text-align: center;
+}
+
+.hide {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+#pid_home .wrap {
+    margin-top: 60px;
+}
+
+#pid_home .mid_bar {
+    display: none;
+}
+
+.sch {
+    position: relative;
+    padding: 0 60px 0 16px;
+    height: 44px;
+    line-height: 44px;
+    border: 2px solid #EA002C;
+    border-radius: 44px;
+}
+
+.sch button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.full {
+    width: 100%;
+}
+
+input, button {
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    font-size: inherit;
+    color: inherit;
+    border: none;
+    background: transparent;
+}
+
+.block {
+    display: block;
+}
+
+.lay_wrap {
+    margin: 0 16px;
+}
+
+.flex > img {
+    margin: auto;
 }
