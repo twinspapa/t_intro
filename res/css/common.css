@@ -192,12 +192,11 @@ footer {
 }
 
 article{
-  height: 1200px;
-  background: #000;
+  min-height: 600px;
 }
 
 article div{
-  color: #fff;
+  color: #000;
 }
 
 #mypage.on {
