@@ -179,9 +179,8 @@
     depth_1.slideTo(cate_index(start_page_id())[1]);
   }
 
-  function cnt_load() {
-    var page_id = start_page_id(),
-        cate_num = cate_index(page_id)[1],
+  function cnt_load(page_id) {
+    var cate_num = cate_index(page_id)[1],
         prev_id = Object.keys(user_cate)[cate_num-1],
         active_id = Object.keys(user_cate)[cate_num],
         next_id = Object.keys(user_cate)[cate_num+1];
@@ -199,8 +198,9 @@
       $("#mypage").toggleClass('on');
     });
     $("#nav_1 .swiper-slide").click(function() {
-      $(this).toggleClass('on');
-      $("#mypage").toggleClass('on');
+      var page_id = $(this).attr(id);
+
+      cnt_load([page_id]);
     });
     cate_load();
     cnt_load();
