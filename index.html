@@ -119,6 +119,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./res/js/swiper.min.js" charset="utf-8"></script>
   <script type="text/javascript">
+// Start [Global 변수 선언]
+  var user_cate = {
+        game: "게임",
+        car: "자동차",
+        shopping: "쇼핑",
+        home: "홈",
+        news: "뉴스",
+        enter: "연예",
+        sports: "스포츠"
+      },
+      $nav_1 = $('#nav_1 .swiper-wrapper'),
+      cate_length = Object.keys(user_cate).length,
+      $cnt_wrap = $('#cnt').children().eq(0),
+      $cnt_list = $cnt_wrap.children(),
+      $body = $('body'),
+      page_id = start_page_id(),
+      cate_num = cate_index(page_id)[1],
+      prev_id = Object.keys(user_cate)[cate_num-1],
+      active_id = Object.keys(user_cate)[cate_num],
+      next_id = Object.keys(user_cate)[cate_num+1];
+// End [변수 선언]
+
+
   var start_page_id= function() {
     var page_hash = location.hash;
 
@@ -159,30 +182,6 @@
     }
     depth_1.update();
   }
-
-
-// Start [Global 변수 선언]
-  var user_cate = {
-        game: "게임",
-        car: "자동차",
-        shopping: "쇼핑",
-        home: "홈",
-        news: "뉴스",
-        enter: "연예",
-        sports: "스포츠"
-      },
-      $nav_1 = $('#nav_1 .swiper-wrapper'),
-      cate_length = Object.keys(user_cate).length,
-      $cnt_wrap = $('#cnt').children().eq(0),
-      $cnt_list = $cnt_wrap.children(),
-      $body = $('body'),
-      page_id = start_page_id(),
-      cate_num = cate_index(page_id)[1],
-      prev_id = Object.keys(user_cate)[cate_num-1],
-      active_id = Object.keys(user_cate)[cate_num],
-      next_id = Object.keys(user_cate)[cate_num+1];
-// End [변수 선언]
-
 
   $(function() {
     $("#btn_menu").click(function() {
