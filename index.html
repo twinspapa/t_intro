@@ -224,7 +224,6 @@
   });
 // << END "컨텐츠 슬라이더"
 
-
 $(function() {
   $("#btn_menu").click(function() {
     $(this).toggleClass('on');
@@ -232,9 +231,8 @@ $(function() {
   });
 
   $("#nav_1 .swiper-slide").click(function() {
-    var clk_id = $(this).attr('id');
-        clk_num = cate_index(clk_id);
-    console.log(clk_id);
+    var clk_id = $(this).attr('id'),
+        clk_num = cate_index(clk_id)[1];
 
     cnt_load(clk_id);
     depth_1.slideTo(clk_num);
@@ -243,8 +241,6 @@ $(function() {
   cate_load();
   cnt_load(start_page_id());
 });
-
-
   </script>
 </body>
 
