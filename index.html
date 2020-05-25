@@ -198,7 +198,7 @@
       $("#mypage").toggleClass('on');
     });
     $("#nav_1 .swiper-slide").click(function() {
-      var page_id = $(this).closest().attr(id);
+      var page_id = $(this).attr('id');
 
       cnt_load([page_id]);
     });
