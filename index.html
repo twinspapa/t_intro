@@ -248,7 +248,7 @@
     cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
     $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
-    depth_1.slidePrev();
+    depth_1.slideTo(cate_index(page_id)[1]);
   });
 
   cnt_slider.on('slideNextTransitionEnd', function () {
@@ -261,7 +261,7 @@
     cnt_slider.appendSlide("<div data-id="+next_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
     $('[data-id='+next_id+']').load("./cnt/"+ next_id + ".html");
-    depth_1.slideNext();
+    depth_1.slideTo(cate_index(page_id)[1]);
   });
 // << END "컨텐츠 슬라이더"
   </script>
