@@ -166,7 +166,7 @@
   var start_page_id = function() {
     var page_hash = location.hash;
 
-    if(page_hash == "" && page_hash == "#null" && page_hash == 'undefiend') {
+    if(page_hash == "" && page_hash == "#null" && page_hash == 'undefiend' && page_hash == '#') {
       return "home";
     } else {
       return page_hash.replace('#','');
