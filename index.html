@@ -231,12 +231,13 @@ $(function() {
     $("#mypage").toggleClass('on');
   });
 
-  $("#nav_1 .swiper-slide a").click(function() {
-    var clk_id = $(this).closest().attr('id');
+  $("#nav_1 .swiper-slide").click(function() {
+    var clk_id = $(this).attr('id');
+        clk_num = cate_index(clk_id);
     console.log(clk_id);
 
     cnt_load(clk_id);
-    depth_1.slideTo(chk_append_index(page_id,0)[1]);
+    depth_1.slideTo(clk_num);
   });
 
   cate_load();
