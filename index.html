@@ -133,12 +133,7 @@
       cate_length = Object.keys(user_cate).length,
       $cnt_wrap = $('#cnt').children().eq(0),
       $cnt_list = $cnt_wrap.children(),
-      $body = $('body'),
-      page_id = start_page_id(),
-      cate_num = cate_index(page_id)[1],
-      prev_id = Object.keys(user_cate)[cate_num-1],
-      active_id = Object.keys(user_cate)[cate_num],
-      next_id = Object.keys(user_cate)[cate_num+1];
+      $body = $('body');
 // End [변수 선언]
 
 
@@ -184,6 +179,12 @@
   }
 
   $(function() {
+    page_id = start_page_id(),
+    cate_num = cate_index(page_id)[1],
+    prev_id = Object.keys(user_cate)[cate_num-1],
+    active_id = Object.keys(user_cate)[cate_num],
+    next_id = Object.keys(user_cate)[cate_num+1];
+    
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
