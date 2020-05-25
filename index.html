@@ -134,7 +134,12 @@
       cate_length = Object.keys(user_cate).length,
       $cnt_wrap = $('#cnt').children().eq(0),
       $cnt_list = $cnt_wrap.children(),
-      $body = $('body');
+      $body = $('body'),
+      page_id = start_page_id(),
+      cate_num = cate_index(page_id)[1],
+      prev_id = Object.keys(user_cate)[cate_num-1],
+      active_id = Object.keys(user_cate)[cate_num],
+      next_id = Object.keys(user_cate)[cate_num+1];
 // End [변수 선언]
 
   var cate_index = function (key_value) {
@@ -181,19 +186,15 @@
 
 
   $(function() {
+
+
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
     });
     cate_load();
-    $('#'+start_page_id()).addClass('on');
-    $body.attr('id', 'pid_'+ start_page_id());
-
-    var page_id = start_page_id(),
-        cate_num = cate_index(page_id)[1],
-        prev_id = Object.keys(user_cate)[cate_num-1],
-        active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1];
+    $('#'+page_id).addClass('on');
+    $body.attr('id', 'pid_'+ page_id);
 
     $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
     $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
@@ -231,7 +232,8 @@
   var cnt_slider = new Swiper('.cnt_slider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    initialSlide: 1,
+    centeredSlides: true,
+    initialSlide: cate_index,
     autoHeight: true
   });
 
