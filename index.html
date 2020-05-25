@@ -187,7 +187,7 @@
 
         $body.attr('id', 'pid_'+ active_id);
 
-        $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ active_id + ".html");
+        $cnt_list.eq(1).attr('data-id',active_id).load("./cnt/"+ active_id + ".html");
         $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
         $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
   }
