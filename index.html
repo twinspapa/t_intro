@@ -159,7 +159,7 @@
     cate_load(user_cate, '.depth_1 .swiper-wrapper');
     depth_1.update();
     depth_1.slideTo(chk_obj_el_index(user_cate, page_id));
-    cnt_load(user_cate, page_id);
+    cnt_load(user_cate, page_id, '.cnt_slider > .swiper-wrapper', 'all');
 
     $("#nav_1 .swiper-slide").click(function() {
       var clk_id = $(this).attr('id'),
@@ -198,23 +198,28 @@
 
   cnt_slider.on('slidePrevTransitionEnd', function() {
     var page_id = $body.attr('id').replace('pid_',''),
-        arry = chk_obj_el_index(user_cate, page_id, 'prev');
+        arry = chk_obj_el_index(user_cate, page_id, 'prev'),
+        page_id = Object.keys(user_cate)[arry[1]],
+        prev_id = Object.keys(user_cate)[arry[0]];
 
-    $body.attr('id','pid_'+ Object.keys(user_cate)[arry[1]]);
-    cnt_slider.prependSlide("<div data-id="+arry[0]+" class='swiper-slide'></div>");
+    $body.attr('id','pid_'+ page_id);
+    cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
-    $('[data-id='+arry[0]+']').load("./cnt/"+ arry[0] + ".html");
+    $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
     depth_1.slideTo(arry[1]);
   });
 
   cnt_slider.on('slideNextTransitionEnd', function() {
     var page_id = $body.attr('id').replace('pid_',''),
-        arry = chk_obj_el_index(user_cate, page_id, 'next');
+        arry = chk_obj_el_index(user_cate, page_id, 'next'),
+        page_id = Object.keys(user_cate)[arry[1]],
+        next_id = Object.keys(user_cate)[arry[2]];
 
-    $body.attr('id','pid_'+ Object.keys(user_cate)[arry[1]]);
-    cnt_slider.appendSlide("<div data-id="+ arry[2] +" class='swiper-slide'></div>");
+    cnt_load
+    $body.attr('id','pid_'+ page_id);
+    cnt_slider.appendSlide("<div data-id="+ next_id +" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
-    $('[data-id='+ arry[2] +']').load("./cnt/"+ arry[2] +".html");
+    $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
     depth_1.slideTo(arry[1]);
   });
 // << END "컨텐츠 슬라이더"

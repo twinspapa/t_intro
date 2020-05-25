@@ -56,11 +56,11 @@ function cate_load(obj_name, appen_div) {
   }
 }
 
-function cnt_load(obj_name, key_name, direction) {
-  var cate_num = chk_obj_el_index(obj_name, key_name, direction),
-      prev_id = Object.keys(user_cate)[cate_num[0]],
-      active_id = Object.keys(user_cate)[cate_num[1]],
-      next_id = Object.keys(user_cate)[cate_num[2]];
+function cnt_load(obj_name, key_name) {
+  var arry = chk_obj_el_index(obj_name, key_name),
+      prev_id = Object.keys(obj_name)[arry[0]],
+      active_id = Object.keys(obj_name)[arry[1]],
+      next_id = Object.keys(obj_name)[arry[2]];
 
       $body.attr('id', 'pid_'+ active_id);
 
