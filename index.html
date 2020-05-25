@@ -141,7 +141,8 @@
     var page_hash = location.hash;
 
     if(page_hash == "" && page_hash == "#null" && page_hash == '#undefiend' && page_hash == '#') {
-      return "home";
+      console.log('home');
+      // return "home";
     } else {
       return page_hash.replace('#','');
     }
@@ -196,22 +197,35 @@
     $cnt_list.eq(1).attr('data-id',page_id).load("./cnt/"+ page_id + ".html");
     $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
     $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
+
+
+    var page_id = start_page_id(),
+        cate_num = cate_index(page_id)[1],
+        prev_id = Object.keys(user_cate)[cate_num-1],
+        active_id = Object.keys(user_cate)[cate_num],
+        next_id = Object.keys(user_cate)[cate_num+1];
+
+    var depth_1 = new Swiper('.depth_1', {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      loop: true,
+      centeredSlides: true,
+      hashNavigation: {
+        watchState: true,
+        replaceState: true,
+      },
+      freeMode: true,
+      on: {
+        init: function () {
+          depth_1.slideTo(cate_num)
+        },
+      },
+    });
   });
 
 
 
-  var depth_1 = new Swiper('.depth_1', {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    loop: true,
-    centeredSlides: true,
-    initialSlide: cate_index(page_id)[1],
-    hashNavigation: {
-      watchState: true,
-      replaceState: true,
-    },
-    freeMode: true
-  });
+
 
 
 
