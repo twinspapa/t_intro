@@ -8,7 +8,7 @@
 <!-- end 로고 -->
 
 <!-- 검색어 입력창 -->
-  <div class="sch">
+  <div class="sch lay_wrap">
     <h2 class="tit hide">검색어 입력창</h2>
     <form name="sch_form" action="" method="get">
       <input class="full block" type="search" name="" placeholder="검색어를 입력하세요">
@@ -22,7 +22,7 @@
 <!-- 즐겨찾기 -->
   <div class="bmk">
     <h2 class="tit hide">즐겨찾기 리스트</h2>
-    <ul class="clear">
+    <ul class="flex">
       <li class="box">
         <a class="link" href="#">
           <img class="img" with="44px" heigh="44px" src="./res/img/icon_dummy.png" alt="서비스명">
@@ -85,7 +85,7 @@
 <!-- end 광고출력 -->
 
 <!-- 뉴스 슬라이드 -->
-  <div class="main_news swiper-container">
+  <div class="main_news slider_type1 swiper-container">
     <div class="tit_wrap">
       <h2 class="tit">뉴스 포커스</h2>
       <a href="#">더보기</a>
@@ -184,7 +184,7 @@
 <!-- end 뉴스 슬라이드 -->
 
 <!-- 게임 슬라이드 -->
-  <div class="main_game swiper-container">
+  <div class="main_game slider_type1 swiper-container">
     <div class="tit_wrap">
       <h2 class="tit">게임</h2>
       <a href="#">더보기</a>
@@ -281,5 +281,11 @@
     </ul>
   </div>
 <!-- end 게임 슬라이드 -->
-
+  <script type="text/javascript">
+    var slider_type1 = new Swiper('.slider_type1', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      freeMode: true,
+    });
+  </script>
 </article>

@@ -145,6 +145,7 @@ footer {
 
 .flex {
     display: flex;
+    flex-flow: wrap;
 }
 
 .hide_up {
@@ -252,7 +253,7 @@ article div{
 }
 
 .logo {
-    padding-bottom: 36px;
+    margin-bottom: 36px;
     text-align: center;
 }
 
@@ -286,6 +287,8 @@ article div{
     position: absolute;
     top: 0;
     right: 0;
+    width: 44px;
+    height: 44px;
 }
 
 .full {
@@ -307,9 +310,48 @@ input, button {
 }
 
 .lay_wrap {
-    margin: 0 16px;
+    margin: 0 16px 32px;
 }
 
 .flex > img {
     margin: auto;
+}
+
+.logo img {
+    width: 48px;
+}
+
+.sch button img {
+    width: 24px;
+}
+
+.bmk .box {
+    width: 25%;
+    text-align: center;
+}
+
+.bmk {
+    max-width: 280px;
+    margin: 0 auto 40px;
+}
+
+.bmk .box .img {
+    margin-bottom: 4px;
+    width: 44px;
+    height: 44px;
+}
+
+.bmk .box .txt {
+    margin-bottom: 8px;
+    font-size: 0.750rem;
+}
+
+.ad_bnr {
+    margin-bottom: 40px;
+    max-height: 60px;
+}
+
+.ad_bnr img {
+    width: 100%;
+    height: auto;
 }
