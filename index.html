@@ -162,8 +162,9 @@
   var depth_1 = new Swiper('.depth_1', {
     slidesPerView: 'auto',
     spaceBetween: 0,
-    centeredSlides: false,
-    initialSlide: 3,
+    loop: true,
+    centeredSlides: true,
+    initialSlide: cate_num,
     hashNavigation: {
       watchState: true,
       replaceState: true,
@@ -193,7 +194,7 @@
     slidesPerView: 1,
     spaceBetween: 0,
     centeredSlides: true,
-    initialSlide: cate_index,
+    initialSlide: 1,
     autoHeight: true
   });
 
