@@ -138,6 +138,19 @@
 // End [변수 선언]
 
   $(function() {
+    var page_hash = location.hash,
+        page_id = page_hash.replace('#','');
+
+    if(page_hash == "" || page_hash == "#null" || page_hash == '#undefiend' || page_hash == '#') {
+      var page_id = 'home';
+
+      $body.attr('id', 'pid_'+page_id);
+    } else {
+      var page_id = page_hash.replace('#','');
+
+      $body.attr('id', 'pid_'+page_id)
+    }
+
     $("#btn_menu").click(function() {
       $(this).toggleClass('on');
       $("#mypage").toggleClass('on');
@@ -145,8 +158,8 @@
 
     cate_load(user_cate, '.depth_1 .swiper-wrapper');
     depth_1.update();
-    depth_1.slideTo(chk_obj_el_index(user_cate, chk_page_id());
-    cnt_load(user_cate, chk_page_id());
+    depth_1.slideTo(chk_obj_el_index(user_cate, page_id));
+    cnt_load(user_cate, page_id);
 
     $("#nav_1 .swiper-slide").click(function() {
       var clk_id = $(this).attr('id'),
