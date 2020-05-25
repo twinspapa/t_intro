@@ -180,10 +180,10 @@
   }
 
   function cnt_load(page_id) {
-    var cate_num = cate_index(page_id)[1],
-        prev_id = Object.keys(user_cate)[cate_num-1],
-        active_id = Object.keys(user_cate)[cate_num],
-        next_id = Object.keys(user_cate)[cate_num+1];
+    var cate_num = cate_index(page_id),
+        prev_id = Object.keys(user_cate)[cate_num[0]],
+        active_id = Object.keys(user_cate)[cate_num[1]],
+        next_id = Object.keys(user_cate)[cate_num[2]];
 
         $body.attr('id', 'pid_'+ page_id);
 
@@ -201,6 +201,7 @@
       var page_id = $(this).attr('id');
 
       cnt_load([page_id]);
+      depth_1.slideTo(chk_append_index(page_id,0)[1]);
     });
     cate_load();
     cnt_load(start_page_id());
