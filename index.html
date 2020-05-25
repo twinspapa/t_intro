@@ -176,20 +176,6 @@
         $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
   }
 
-  $(function() {
-    $("#btn_menu").click(function() {
-      $(this).toggleClass('on');
-      $("#mypage").toggleClass('on');
-    });
-    $("#nav_1 .swiper-slide").click(function() {
-      var clk_id = $(this).attr('id');
-
-      cnt_load([clk_id]);
-      depth_1.slideTo(chk_append_index(page_id,0)[1]);
-    });
-    cate_load();
-    cnt_load(start_page_id());
-  });
 
 
   var depth_1 = new Swiper('.depth_1', {
@@ -199,6 +185,8 @@
     centeredSlides: true,
     freeMode: true,
   });
+
+
 
 // "컨텐츠 슬라이더" START >>
   var cnt_slider = new Swiper('.cnt_slider', {
@@ -235,6 +223,25 @@
     depth_1.slideTo(chk_append_index(page_id,2)[1]);
   });
 // << END "컨텐츠 슬라이더"
+
+
+$(function() {
+  $("#btn_menu").click(function() {
+    $(this).toggleClass('on');
+    $("#mypage").toggleClass('on');
+  });
+  $("#nav_1 .swiper-slide").click(function() {
+    var clk_id = $(this).attr('id');
+    console.log(clk_id);
+
+    cnt_load([clk_id]);
+    depth_1.slideTo(chk_append_index(page_id,0)[1]);
+  });
+  cate_load();
+  cnt_load(start_page_id());
+});
+
+
   </script>
 </body>
 
