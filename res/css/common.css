@@ -48,7 +48,7 @@ img {width: 100%;height: auto;vertical-align: top;}
 
 
 /* 메인 네비게이션바 */
-header #nav_1 {position: fixed;top: 16px;left: 68px;right: 68px;border-radius: 44px;}
+header #nav_1 {position: fixed;top: 16px;left: 68px;right: 68px;margin: 0 auto;max-width: 750px;border-radius: 44px;z-index: 11;}
 header .depth_1 {margin: 0 8px !important;}
 header .depth_1 li {display: inline-block;width: auto;}
 header .depth_1 li a{display: inline-block;margin: 0 4px;padding: 10px 12px;font-size: 1rem;color: rgba(0,0,0,.7);}
@@ -96,7 +96,7 @@ header #mypage.on {width: 100%;height: 100%;border-radius: 0;border-color: trans
 #cnt {max-width: 750px;background: #fff;}
 .lay_wrap.full {padding: 0;}
 .lay_wrap {max-width: 568px;margin: 0 auto 2rem;padding: 0 16px;}
-
+.art_wrap {margin-top: 104px;min-height: 200vh;}
 
 /* search */
 .sch .sch_form {position: relative;padding: 0 60px 0 16px;height: 40px;line-height: 40px;border: 2px solid #EA002C;border-radius: 44px;}
@@ -122,6 +122,3 @@ header #mypage.on {width: 100%;height: 100%;border-radius: 0;border-color: trans
 .cnt_type1 .name .tit {font-size: 0.938rem;}
 .cnt_type1 .name .cate_name {position: relative;top: -2px;padding: 0 5px;font-size: 0.750rem;color: #EA002C;border: 0.5px solid #EA002C;border-radius: 6px;}
 .cnt_type1 .name {height: 2.8rem;line-height: 1.4;}
-
-
-article{min-height: 600px;}

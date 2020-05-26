@@ -18,7 +18,7 @@
 <body id="">
   <div class="wrap">
     <header>
-      <div id="btn_menu" class="box44 flex">
+      <div id="btn_menu" class="flex">
         <div class="icon_menu">
           <div class="icon_menu_inner"></div>
         </div>
@@ -143,6 +143,7 @@
       $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
       append_script(prev_id);
       depth_1.slideTo(arry[1]);
+      $(window).scrollTop(0);
     });
 
     cnt_slider.on('slideNextTransitionEnd', function() {
@@ -158,6 +159,7 @@
       $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
       append_script(next_id);
       depth_1.slideTo(arry[1]);
+      $(window).scrollTop(0);
     });
   // << END "컨텐츠 슬라이더"
 
