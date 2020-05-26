@@ -37,6 +37,7 @@ img {width: 100%;height: auto;vertical-align: top;}
 .hide_down {transform: translateY(100vh);}
 .box44 { width: 44px; height: 44px; }
 .line_cut {white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.line_cut.th2 {white-space: normal;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 .center {text-align: center;}
 .flex > img {margin: auto;}
 .box, .box_all, .box_all * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -79,11 +80,12 @@ header #btn_search {position: absolute;top: 0;right: 0;width: 44px;height: 44px;
 
 
 /* footer */
-footer .info {padding: 24px 0 10px;text-align: center;font-size: 0;}
+footer .info {padding: 0 0 10px;text-align: center;font-size: 0;}
 footer .info a {padding: 10px 8px;font-size: 1rem;}
 footer .copyright {font-size: 0.875rem;text-align: center;}
 footer {padding-bottom: 64px;}
-footer .ad_wrap {max-width: 568px;margin: 0 auto;padding: 0 16px;}
+footer .ad_wrap {margin:;}
+
 
 /* 마이페이지 */
 header #mypage {position: fixed;top: 16px;left: 16px;width: 44px;height: 44px;border-radius: 44px;transition: width 0.3s ease,height 0.3s ease, border-radius 0.3s 0.1s ease;z-index: 10;}
@@ -115,10 +117,11 @@ header #mypage.on {width: 100%;height: 100%;border-radius: 0;border-color: trans
 .cnt_type1 > li {width: 160px !important;}
 .cnt_type1 > li:first-child {margin-left: 16px;}
 .cnt_type1 > li:last-child {margin-right: 16px;}
-.cnt_type1 .img_wrap {width: 160px; height: 90px;}
+.cnt_type1 .img_wrap {margin-bottom: 4px;width: 160px;height: 90px;}
 .cnt_type1 .img_wrap img {width: 100%;height: 100%;object-fit: cover;}
-.cnt_type1 .name .tit {font-size: 0.875rem;}
+.cnt_type1 .name .tit {font-size: 0.938rem;}
 .cnt_type1 .name .cate_name {padding: 0 5px;font-size: 0.750rem;color: #EA002C;border: 0.5px solid #EA002C;border-radius: 6px;}
+.cnt_type1 .name {height: 2.8rem;line-height: 1.4;}
 
 
 article{min-height: 600px;}
