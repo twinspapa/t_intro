@@ -1,4 +1,4 @@
-#pid_home .art_wrap {margin-top: 60px;}
+#pid_home .art_wrap {margin-top: 60px;min-height: 0;}
 #pid_home .logo img {width: 48px;}
 #pid_home .logo {margin-bottom: 2rem;text-align: center;}
 #pid_home .mid_bar {display: none;}
