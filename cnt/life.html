@@ -1,1 +1,42 @@
-s
+<article page_id="life">
+  <div id="nav_2">
+    <nav class="depth_2 swiper-container border-box-all">
+      <ul class="swiper-wrapper"></ul>
+    </nav>
+    <a href="" class="plus">
+      <span class="hide">관심 태그 추가하기</span>
+    </a>
+  </div>
+  <div>life</div>
+</article>
+<script type="text/javascript">
+  // Start [Global 변수 선언]
+    var sub_cate = {
+          mynews: "MY뉴스",
+          game: "정치",
+          car: "경제",
+          shopping: "사회",
+          home: "생활",
+          news: "IT/과학",
+          enter: "세계"
+        },
+        mynews = {
+          keyword1: "코로나19",
+          keyword2: "비트코인"
+        },
+        $nav2 = $('#nav_2 .swiper-wrapper');
+  // End [변수 선언]
+
+
+  // 서브메뉴 슬라이더
+      var depth_2 = new Swiper('.depth_2', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        initialSlide: 0,
+        freeMode: true
+      });
+  // 서브메뉴 슬라이더 끝
+  $(function() {
+    console.log(cate_length);
+  });
+</script>
