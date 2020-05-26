@@ -65,8 +65,11 @@ function cnt_load(obj_name, key_name) {
       $body.attr('id', 'pid_'+ active_id);
 
       $cnt_list.eq(1).attr('data-id',active_id).load("./cnt/"+ active_id + ".html");
+      append_script(active_id);
       $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
+      append_script(prev_id);
       $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
+      append_script(next_id);
 }
 
 function append_script(id) {
