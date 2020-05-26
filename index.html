@@ -13,7 +13,6 @@
   <title>T인트로</title>
   <link rel="stylesheet" href="./res/css/common.css">
   <link rel="stylesheet" href="./res/css/swiper.min.css">
-  <link rel="stylesheet" href="./res/css/home.css">
 </head>
 
 <body id="">
@@ -161,15 +160,18 @@
   });
 
   cnt_slider.on('slidePrevTransitionEnd', function() {
-    var page_id = $body.attr('id').replace('pid_',''),
+    var $head = $('head');
+        page_id = $body.attr('id').replace('pid_',''),
         arry = chk_obj_el_index(user_cate, page_id, 'prev'),
         page_id = Object.keys(user_cate)[arry[1]],
         prev_id = Object.keys(user_cate)[arry[0]];
 
     $body.attr('id','pid_'+ page_id);
-    cnt_slider.prependSlide("<div data-id="+prev_id+" class='swiper-slide'></div>");
+    cnt_slider.prependSlide("<div data-id="+ prev_id +" class='swiper-slide'></div>");
     cnt_slider.removeSlide(3);
+    $head.append("<link rel=stylesheet href=./res/css/"+ prev_id +".css>");
     $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
+    $head.append("<script src=./res/js/"+ prev_id +".js charset=utf-8></script>");
     depth_1.slideTo(arry[1]);
   });
 
@@ -182,7 +184,9 @@
     $body.attr('id','pid_'+ page_id);
     cnt_slider.appendSlide("<div data-id="+ next_id +" class='swiper-slide'></div>");
     cnt_slider.removeSlide(0);
+    $('head').append("<link rel=stylesheet href=./res/css/"+ next_id +".css>");
     $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
+    $head.append("<script src=./res/js/"+ next_id +".js charset=utf-8></script>");
     depth_1.slideTo(arry[1]);
   });
 // << END "컨텐츠 슬라이더"
