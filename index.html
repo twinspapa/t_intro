@@ -139,10 +139,9 @@
       $body.attr('id','pid_'+ page_id);
       cnt_slider.prependSlide("<div data-id="+ prev_id +" class='swiper-slide'></div>");
       cnt_slider.removeSlide(3);
-      $head.append("<link rel=stylesheet href=./res/css/"+ prev_id +".css>");
-      $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
       depth_1.slideTo(arry[1]);
       append_css(prev_id);
+      $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
       append_script(prev_id);
       $(window).scrollTop(0);
     });
@@ -156,10 +155,9 @@
       $body.attr('id','pid_'+ page_id);
       cnt_slider.appendSlide("<div data-id="+ next_id +" class='swiper-slide'></div>");
       cnt_slider.removeSlide(0);
-      $head.append("<link rel=stylesheet href=./res/css/"+ next_id +".css>");
-      $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
       depth_1.slideTo(arry[1]);
       append_css(prev_id);
+      $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
       append_script(next_id);
       $(window).scrollTop(0);
     });
