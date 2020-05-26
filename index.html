@@ -81,7 +81,8 @@
   cate_length = Object.keys(user_cate).length,
   $cnt_wrap = $('#cnt').children().eq(0),
   $cnt_list = $cnt_wrap.children(),
-  $body = $('body');
+  $body = $('body'),
+  $head = $('head');
 
   $(function() {
     var page_id = chk_page_id();
@@ -97,9 +98,6 @@
     $("#nav_1 .swiper-slide").click(function() {
       var clk_id = $(this).attr('id'),
           clk_num = chk_obj_el_index(user_cate, clk_id)[1];
-
-      console.log(clk_id);
-      console.log(clk_num);
 
       cnt_load(user_cate, clk_id);
       depth_1.slideTo(clk_num);
@@ -129,8 +127,7 @@
     });
 
     cnt_slider.on('slidePrevTransitionEnd', function() {
-      var $head = $('head'),
-          page_id = $body.attr('id').replace('pid_',''),
+      var page_id = $body.attr('id').replace('pid_',''),
           arry = chk_obj_el_index(user_cate, page_id, 'prev'),
           page_id = Object.keys(user_cate)[arry[1]],
           prev_id = Object.keys(user_cate)[arry[0]];
@@ -140,13 +137,12 @@
       cnt_slider.removeSlide(3);
       $head.append("<link rel=stylesheet href=./res/css/"+ prev_id +".css>");
       $('[data-id='+prev_id+']').load("./cnt/"+ prev_id + ".html");
-      $body.append("<script src=./res/js/"+ prev_id +".js charset=utf-8></script>");
+      append_script(prev_id);
       depth_1.slideTo(arry[1]);
     });
 
     cnt_slider.on('slideNextTransitionEnd', function() {
-      var $head = $('head'),
-          page_id = $body.attr('id').replace('pid_',''),
+      var page_id = $body.attr('id').replace('pid_',''),
           arry = chk_obj_el_index(user_cate, page_id, 'next'),
           page_id = Object.keys(user_cate)[arry[1]],
           next_id = Object.keys(user_cate)[arry[2]];
@@ -156,7 +152,7 @@
       cnt_slider.removeSlide(0);
       $head.append("<link rel=stylesheet href=./res/css/"+ next_id +".css>");
       $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
-      $body.append("<script src=./res/js/"+ next_id +".js charset=utf-8></script>");
+      append_script(next_id);
       depth_1.slideTo(arry[1]);
     });
   // << END "컨텐츠 슬라이더"

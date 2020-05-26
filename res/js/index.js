@@ -68,3 +68,10 @@ function cnt_load(obj_name, key_name) {
       $cnt_list.eq(0).attr('data-id',prev_id).load("./cnt/"+ prev_id + ".html");
       $cnt_list.eq(2).attr('data-id',next_id).load("./cnt/"+ next_id + ".html");
 }
+
+function append_script(id) {
+  var script_el = document.createElement('script');
+
+  script_el.src="./res/js/"+ id +".js";
+  document.body.appendChild(script_el);
+}
