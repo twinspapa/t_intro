@@ -100,7 +100,7 @@
 
     cnt_load(user_cate, page_id);
 
-    $("#nav_1 .swiper-slide").click(function() {
+    $(".depth_1 ul li").click(function() {
       var clk_id = $(this).attr('id'),
           clk_num = chk_obj_el_index(user_cate, clk_id)[1];
 
@@ -121,6 +121,7 @@
     loop: true,
     centeredSlides: true,
     freeMode: true,
+
   });
 
   // "컨텐츠 슬라이더" START >>
