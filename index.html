@@ -13,6 +13,7 @@
   <title>T인트로</title>
   <link rel="stylesheet" href="./res/css/common.css">
   <link rel="stylesheet" href="./res/css/swiper.min.css">
+  <link rel="shortcut icon" href="./res/img/tintro.ico">
 </head>
 
 <body id="">
@@ -98,6 +99,19 @@
     depth_1.slideTo(chk_obj_el_index(user_cate, page_id));
 
     cnt_load(user_cate, page_id);
+
+    $("#nav_1 .swiper-slide").click(function() {
+      var clk_id = $(this).attr('id'),
+          clk_num = chk_obj_el_index(user_cate, clk_id)[1];
+
+      cnt_load(user_cate, clk_id);
+      depth_1.slideTo(clk_num);
+    });
+
+    $("#btn_menu").click(function() {
+      $(this).toggleClass('on');
+      $("#mypage").toggleClass('on');
+    });
   });
 
   var depth_1 = new Swiper('.depth_1', {
@@ -145,21 +159,6 @@
       $('[data-id='+ next_id +']').load("./cnt/"+ next_id +".html");
       $(window).scrollTop(0);
     });
-
-  $(function() {
-    $("#nav_1 .swiper-slide").click(function() {
-      var clk_id = $(this).attr('id'),
-          clk_num = chk_obj_el_index(user_cate, clk_id)[1];
-
-      cnt_load(user_cate, clk_id);
-      depth_1.slideTo(clk_num);
-    });
-
-    $("#btn_menu").click(function() {
-      $(this).toggleClass('on');
-      $("#mypage").toggleClass('on');
-    });
-  });  
   // << END "컨텐츠 슬라이더"
   </script>
 
