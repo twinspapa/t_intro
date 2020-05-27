@@ -138,6 +138,7 @@
           page_id = Object.keys(user_cate)[arry[1]],
           prev_id = Object.keys(user_cate)[arry[0]];
 
+      location.hash = '#'+ page_id;
       $body.attr('id','pid_'+ page_id);
       cnt_slider.prependSlide("<div data-id="+ prev_id +" class='swiper-slide'></div>");
       cnt_slider.removeSlide(3);
@@ -152,6 +153,7 @@
           page_id = Object.keys(user_cate)[arry[1]],
           next_id = Object.keys(user_cate)[arry[2]];
 
+      location.hash = '#'+ page_id;s
       $body.attr('id','pid_'+ page_id);
       cnt_slider.appendSlide("<div data-id="+ next_id +" class='swiper-slide'></div>");
       cnt_slider.removeSlide(0);
