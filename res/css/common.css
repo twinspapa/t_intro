@@ -48,10 +48,10 @@ img {width: 100%;height: auto;vertical-align: top;}
 
 
 /* 메인 네비게이션바 */
-header #nav_1 {position: fixed;top: 16px;left: 68px;right: 68px;margin: 0 auto;max-width: 750px;border-radius: 44px;z-index: 11;}
+header #nav_1 {position: fixed;top: 16px;left: 68px;right: 68px;margin: 0 auto;max-width: 568px;border-radius: 44px;z-index: 11;}
 header .depth_1 {margin: 0 8px !important;}
 header .depth_1 li {display: inline-block;width: auto;}
-header .depth_1 li a{display: inline-block;margin: 0 4px;padding: 10px 12px;font-size: 1rem;color: rgba(0,0,0,.7);}
+header .depth_1 li a{display: inline-block;margin: 0 4px;padding: 9px 12px;font-size: 1rem;color: rgba(0,0,0,.7);}
 
 
 /* 서브 네비게이션바 */
@@ -75,8 +75,8 @@ header #btn_menu.on .icon_menu_inner:after {bottom: 0; transition:bottom .1s eas
 
 
 /* 검색버튼 */
-header #search_wrap {display: none;}
-header #btn_search {position: absolute;top: 0;right: 0;width: 44px;height: 44px;border-radius: 100%;}
+header #search_wrap {/* display: none; */}
+header #btn_search {position: fixed;top: 16px;right: 16px;width: 44px;height: 44px;border-radius: 100%;}
 
 
 /* footer */
@@ -154,4 +154,31 @@ header #mypage.on {width: 100%;height: 100%;border-radius: 0;border-color: trans
 
 #pid_home #cnt {
     margin-bottom: 64px;
+}
+
+#header #btn_search img {
+    width: 22px;
+}
+
+#header .sch_form {
+    position: fixed;
+    top: 16px;
+    left: 68px;
+    right: 68px;
+    margin: 0 auto;
+    max-width: 568px;
+    border-radius: 44px;
+    z-index: 11;
+}
+
+#header .sch_form .search {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+}
+
+#header .sch_form input {
+    padding: 0 16px 0 16px;
+    width: 100%;
+    line-height: 42px;
 }
