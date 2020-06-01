@@ -13,18 +13,20 @@
   // Start [Global 변수 선언]
     var sub_cate = {
           mynews: "MY뉴스",
-          game: "정치",
-          car: "경제",
-          shopping: "사회",
-          home: "생활",
-          news: "IT/과학",
-          enter: "세계"
+          politics: "정치",
+          economy: "경제",
+          social: "사회",
+          life: "생활",
+          science: "IT/과학",
+          world: "세계"
         },
         mynews = {
           keyword1: "코로나19",
           keyword2: "비트코인"
         },
-        $nav2 = $('#nav_2 .swiper-wrapper');
+        $nav2 = $('#nav_2 .swiper-wrapper'),
+        $nav2_list = $nav2.children(),
+        $news_sub_con = $('#news_sub_con');
   // End [변수 선언]
 
 
@@ -36,8 +38,15 @@
         freeMode: true
       });
   // 서브메뉴 슬라이더 끝
+
   $(function() {
     console.log(cate_length);
-    $('#news_sub_con').load("./cnt/"+ 'politics' + ".html");
+    $news_sub_con.load("./cnt/"+ Object.keys(sub_cate)[1] + ".html");
+    cate_load(sub_cate,$nav2);
+    $nav2_list.click(function() {
+      var clk_id = $(this).attr('id');
+
+      $news_sub_con.load("./cnt/"+ clk_id + ".html");
+    });
   });
 </script>

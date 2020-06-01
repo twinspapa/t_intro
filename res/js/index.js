@@ -52,7 +52,7 @@ function cate_load(obj_name, appen_div) {
       el = $(appen_div);
 
   for (var i = 0; i < length; i++) {
-    $nav_1.append("<li id="+arry[i]+" class='swiper-slide'><a href='#"+arry[i]+"'>"+obj[arry[i]]+"</a></li>");
+    el.append("<li id="+arry[i]+" class='swiper-slide'><a href='#"+arry[i]+"'>"+obj[arry[i]]+"</a></li>");
   }
 }
 
