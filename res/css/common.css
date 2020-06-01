@@ -51,7 +51,7 @@ img {width: 100%;height: auto;vertical-align: top;}
 header #nav_1 {position: fixed;top: 16px;left: 68px;right: 68px;margin: 0 auto;max-width: 568px;border-radius: 44px;z-index: 11;}
 header .depth_1 {margin: 0 8px !important;}
 header .depth_1 li {display: inline-block;width: auto;}
-header .depth_1 li a{display: inline-block;margin: 0 4px;padding: 9px 12px;font-size: 1rem;color: rgba(0,0,0,.7);}
+header .depth_1 li a{display: inline-block;margin: 0 4px;padding: 10px 12px;font-size: 1rem;color: rgba(0,0,0,.7);}
 
 
 /* 서브 네비게이션바 */
