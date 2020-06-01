@@ -7,7 +7,7 @@
       <span class="hide">관심 태그 추가하기</span>
     </a>
   </div>
-  <div class="depth_2_wrap"></div>
+  <div id="news_sub_con" class="depth_2_wrap"></div>
 </article>
 <script type="text/javascript">
   // Start [Global 변수 선언]
@@ -38,6 +38,6 @@
   // 서브메뉴 슬라이더 끝
   $(function() {
     console.log(cate_length);
-
+    $('#news_sub_con').load("./cnt/"+ 'politics' + ".html");
   });
 </script>
