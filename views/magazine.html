@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}MAGAZINE{% endblock %}
+{% block content %}
+<main id="magazine">
+    <section class="container" style="padding-top:192px;">
+        <h3 class="section-title br-circle" data-aos="fade">
+            최신 트렌드부터<br>
+            마케팅 정보까지<br>
+            다양한 소식을 만나보세요
+        </h3>
+        <div class="board-teb-menu row m-0" style="padding:82px 0 25px;">
+            <div class="col-4 pl-0" data-aos="fade-right">
+                <a class="active" href="magazine.php">MAGAZINE</a>
+            </div>
+            <div class="col-4" data-aos="fade-down">
+                <a href="news.php">NEWS</a>
+            </div>
+            <div class="col-4 pr-0" data-aos="fade-left">
+                <a href="product.php">PRODUCT</a>
+            </div>
+        </div>
+        <div class="search-type-1" data-aos="fade-up">
+            <form class="" action="index.html" method="post">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-xl-3">
+                        <select id="magazine-search" class="" name="magazine-search">
+                          <option value="all">전체</option>
+                          <option value="insight">INSIGHT</option>
+                          <option value="marketing">MARKETING</option>
+                          <option value="news">월간뉴스</option>
+                        </select>
+                    </div>
+                    <div class="relative col-6 col-md-4 col-xl-3">
+                        <input type="search" name="" placeholder="검색어를 입력하세요">
+                        <a href="#none"><img src="views/images/icon-search.png" alt=""></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <ul class="board-type-1 list row">
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+            <li class="item col-6 col-md-4" data-aos="fade-up">
+                <a href="board-detail.php">
+                    <div class="img-wrap">
+                        <img src="views/images/sample-620x620.png" alt="">
+                    </div>
+                    <div class="text-wrap">
+                        <p>category name</p>
+                        <p>portfolio brand name</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="pagenation-wrap" data-aos="fade-up">
+            <div class="first">
+                <a href="#none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#b5b5b5" class="bi bi-arrow-left" viewBox="-5 2 24 24">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="prev">
+                <a href="#none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#b5b5b5" class="bi bi-chevron-left" viewBox="-5 2 24 24">
+                      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </a>
+            </div>
+            <ol>
+                <li><a href="#none">1</a></li>
+                <li><a href="#none">2</a></li>
+                <li><a href="#none">3</a></li>
+            </ol>
+            <div class="next">
+                <a href="#none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#b5b5b5" class="bi bi-chevron-right" viewBox="-5 2 24 24">
+                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="last">
+                <a href="#none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#b5b5b5" class="bi bi-arrow-right" viewBox="-5 2 24 24">
+                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

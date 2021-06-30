@@ -1,0 +1,210 @@
+{% extends "base.html" %}
+
+{% block title %}HOME{% endblock %}
+{% block content %}
+<main id="home">
+
+    <section class="video-container mb-100" data-aos="zoom-out">
+        <video autoplay loop muted class="video-bg" id="video-bg">
+            <source src="views/video/video.mp4" type="video/webm" alt="HTML5 background video">
+        </video>
+    </section>
+
+
+    <section class="about-eruda mb-150">
+        <div class="container" data-aos="fade-up">
+            <h3 class="section-title br-circle mb-50">About ERUDA</h3>
+            <div>
+                <a href="#none" class="btn btn-custom-1">View more<span class="btn-arrow-right"></span></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="what-we-do mb-300">
+        <div class="container">
+            <h3 class="section-title br-circle mb-100" data-aos="fade-up">What we do</h3>
+            <p class="section-title mb-50" data-aos="fade-up">
+              이루다마케팅은<br>
+              디지털 트랜스포메이션 혁신을 선도하는<br>
+              마케팅 솔루션을 제시합니다
+            </p>
+            <ul class="row">
+                <li class="col-md-6 col-12" data-aos="fade-right">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>PERFORMANCE<br>MARKETING</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>정량적 인사이트 분석을 기반으로 최고의 퍼포먼스를 제공합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+                <li class="col-md-6 col-12" data-aos="fade-left">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>IMC<br>PLANNING</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>하나의 핵심 메시지로 통합된 멀티 채널 마케팅 전략을 제공합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+                <li class="col-md-6 col-12" data-aos="fade-right">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>BRANDING</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>소비자의 마음을 움직이는 감각적인 브랜딩 전략을 제시합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+                <li class="col-md-6 col-12" data-aos="fade-left">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>CONTENTS<br>MARKETING</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>브랜드 핵심 메시지를 트렌디한 스토리 콘텐츠로 재창조 합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+                <li class="col-md-6 col-12" data-aos="fade-right">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>SITE<br>PRODUCTION</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>브랜드에 최적화된 UI/UX 기획으로 소비자에게 최고의 브랜드 경험을 제공합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+                <li class="col-md-6 col-12" data-aos="fade-left">
+                  <a href="#none" class="turn-box-fade">
+                      <div class="front flex">
+                        <h4>AD-TECH<br>SOLUTION</h4>
+                      </div>
+                      <div class="back flex">
+                        <p class="br-circle"><span>AD-TECH SOLUTION을 통해 최고의 데이터 기반 마케팅을 실현 합니다</span></p>
+                      </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="eruda-portfolio mb-300">
+        <div class="container" data-aos="fade-up">
+            <h3 class="section-title br-circle mb-50">ERUDA Portfolio</h3>
+        </div>
+
+        <div class="eruda-portfolio-slider mb-80" data-aos="fade-up">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <img class="swiper-slide-container" src="views/images/main-portfolio-1.png" alt="" />
+                </li>
+                <li class="swiper-slide">
+                    <img class="swiper-slide-container" src="views/images/main-portfolio-2.png" alt="" />
+                </li>
+                <li class="swiper-slide">
+                  <img class="swiper-slide-container" src="views/images/main-portfolio-3.png" alt="" />
+                </li>
+            </ul>
+            <div class="swiper-button-wrapper">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="eruda-office">
+        <div class="container" data-aos="fade-up">
+            <h3 class="section-title br-circle mb-50">ERUDA Office</h3>
+        </div>
+        <div class="eruda-office-slider" data-aos="fade-up">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="views/images/main-office.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="views/images/main-office-sample.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="views/images/main-office.png" alt="" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="container eruda-office-slider-pagination"></div>
+
+            <div class="container swiper-progress-bar">
+                <span class="slide_progress-bar"></span>
+              </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block common_js %}
+<script type="text/javascript">
+
+
+  (function($){
+    $(document).ready(function() {
+      $('#gnb').addClass('hero-page')
+    });
+
+    var swiper = new Swiper(".eruda-office-slider", {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      speed: 2000,
+      loop: true,
+      effect: 'fade',
+      pagination: {
+        el: ".eruda-office-slider-pagination",
+        type: "fraction"
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      on: {
+        init: function () {
+          $(".swiper-progress-bar").removeClass("animate");
+          $(".swiper-progress-bar").removeClass("active");
+          $(".swiper-progress-bar").eq(0).addClass("animate");
+          $(".swiper-progress-bar").eq(0).addClass("active");
+        },
+        slideChangeTransitionStart: function () {
+          $(".swiper-progress-bar").removeClass("animate");
+          $(".swiper-progress-bar").removeClass("active");
+          $(".swiper-progress-bar").eq(0).addClass("active");
+        },
+        slideChangeTransitionEnd: function () {
+          $(".swiper-progress-bar").eq(0).addClass("animate");
+        }
+      }
+    });
+
+    var swiper = new Swiper('.eruda-portfolio-slider', {
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      speed: 500,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      paginationClickable: true,
+      loop: true,
+      slideToClickedSlide: true
+    });
+
+  })(jQuery);
+</script>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}PRODUCT{% endblock %}
+{% block content %}
+<main id="magazine">
+    <section class="container" style="padding-top:192px;">
+        <h3 class="section-title br-circle" data-aos="fade">
+            최신 트렌드부터<br>
+            마케팅 정보까지<br>
+            다양한 소식을 만나보세요
+        </h3>
+        <div class="board-teb-menu row m-0" style="padding:82px 0 25px;">
+            <div class="col-4 pl-0" data-aos="fade-right">
+                <a href="magazine.php">MAGAZINE</a>
+            </div>
+            <div class="col-4" data-aos="fade-down">
+                <a href="news.php">NEWS</a>
+            </div>
+            <div class="col-4 pr-0" data-aos="fade-left">
+                <a class="active" href="product.php">PRODUCT</a>
+            </div>
+        </div>
+        <div class="search-type-1" data-aos="fade-down">
+            <form class="" action="index.html" method="post">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-xl-3">
+                        <select id="mediaPorposal" class="" name="media-proposal">
+                          <option value="all">전체</option>
+                          <option value="sa">SA</option>
+                          <option value="da">DA</option>
+                          <option value="targeting">Targeting</option>
+                          <option value="sns">SNS</option>
+                        </select>
+                    </div>
+                    <div class="relative col-6 col-md-4 col-xl-3">
+                        <input type="search" name="" placeholder="검색어를 입력하세요">
+                        <a href="#none"><img src="views/images/icon-search.png" alt=""></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <ul class="board-type-2 list row">
+            <li class="item col-6" data-aos="fade-up">
+                <div class="flex">
+                    <p class="text">패션앱광고-지그재그 소개서</p>
+                    <a href=""><img src="views/images/icon-down.png" alt=""></a>
+                </div>
+            </li>
+            <li class="item col-6" data-aos="fade-up">
+                <div class="flex">
+                    <p class="text">패션앱광고-지그재그 소개서</p>
+                    <a href=""><img src="views/images/icon-down.png" alt=""></a>
+                </div>
+            </li>
+            <li class="item col-6" data-aos="fade-up">
+                <div class="flex">
+                    <p class="text">패션앱광고-지그재그 소개서</p>
+                    <a href=""><img src="views/images/icon-down.png" alt=""></a>
+                </div>
+            </li>
+            <li class="item col-6" data-aos="fade-up">
+                <div class="flex">
+                    <p class="text">패션앱광고-지그재그 소개서</p>
+                    <a href=""><img src="views/images/icon-down.png" alt=""></a>
+                </div>
+            </li>
+        </ul>
+    </section>
+</main>
+
+{% endblock %}
